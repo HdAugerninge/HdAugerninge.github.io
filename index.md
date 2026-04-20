@@ -12,3 +12,4 @@ You can edit this file (`index.md`) to change the content that appears on the fr
 ## Projects
 - Project 1
 - Project 2
+- Project 3
