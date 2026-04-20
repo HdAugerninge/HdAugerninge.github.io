@@ -4,6 +4,8 @@ layout: default
 
 # Welcome to HdAugenringe
 
+![Banner](/resources/drucker_setup.jpg)
+
 This is the homepage of my new website, built automatically by GitHub Pages using Jekyll!
 
 ## About
