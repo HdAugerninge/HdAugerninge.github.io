@@ -1,18 +1,21 @@
-# Fantasy Printing Art - Website Blueprint
+# Fantasy Printing Art - Technical Setup & Best Practices
 
-## Core Identity
-- **Business Name**: Fantasy Printing Art
-- **Niche Focus**: 3D Printing Service. Primary categories: Articulated Dragons, Fidget Toys, Nerd Stuff (Star Wars, Harry Potter, LotR), and Practical Solutions.
-- **Repository**: Hosted manually as a "User Pages" GitHub Pages setup.
+## Project Fundamentals
+- **Business Focus**: 3D printing service specializing in articulated dragons, fidget toys, nerd stuff, and customized, web-sourced practical solutions.
+- **Routing & Tech Stack**: Hosted statically generated via GitHub Pages user site.
+- **Formspree Setup**: The contact form logic in `index.md` uses the `@formspree/ajax` Vanilla JS library via CDN. We intentionally **avoid** standard HTTP Basic action posts to prevent users from being thrown out to Formspree's success/captcha page. It captures validation dynamically inside `data-fs-error`. 
 
-## Architecture & Styling
-We deliberately bypassed Jekyll's default `jekyll-theme-minimal` settings to achieve a "Wow"-factor premium design.
-- **Layout Config**: Uses a custom wrapper located at `_layouts/default.html`.
-- **Primary Styling Elements**: (`assets/css/styles.css`) Features a modern Dark Mode palette (background: `#0b0f19`), Glassmorphism transparent nav-bars/cards, and vibrant neon cyan/purple gradients for hover animations and headers. Avoids TailwindCSS.
-- **Content Strategy**:
-  - `index.md` (Homepage): Combines HTML structures for Heros, Info Grids, Pricing Transparency, and a customized Contact Form.
-  - Subpages (`dragons.md`, `nerdstuff.md`, `practical.md`): Simplified markdown pages designed primarily as photo gallery containers.
+## Bilingual Architecture (DE & EN)
+Because GitHub Pages restricts some custom Jekyll i18n plugins in safe-mode:
+- **Root Pages = German**: `index.md`, `dragons.md`, etc., serve German content natively since the core audience is German.
+- **English Path = `/en/`**: Deep mirrored copies exist in the `en/` subfolder.
+- **Liquid Rendering**: Shared headers/footers in `_layouts/default.html` rely on pulling dictionary variables structured inside `_data/de.yml` and `_data/en.yml`. E.g., `{{ ui.nav.home }}`.
+- **Best Practice for New Content**: If you add a new page (e.g., `new_gallery.md`), you **must** build a German version at the root folder, and sequentially copy it to `/en/new_gallery.md`. Make sure to attach the `lang: de` and `lang: en` tags in the YAML frontmatter.
 
-## Technical Details & Deployment
-- **Local Development Exception**: Do not assume the developer uses a local terminal Ruby/Jekyll environment. To prevent blockers, the standard deployment workflow consists of directly committing and executing a `git push` command, allowing GitHub Pages background processors to build it live.
-- **Contact Forms**: Designed relying on frontend-only solutions. The `index.md` contains an HTML form built for Formspree.io integration. The `action` tag requires insertion of the specific Formspree endpoint ID.
+## Styling & Theme Rules
+We intentionally removed Jekyll's base minimals.
+- **Design Core**: Pure CSS defined inside `assets/css/styles.css`. Look and feel relies heavily on `#0b0f19` dark modes, neon cyan/purple combinations (`#00f2fe`), and heavy Glassmorphism overlay panels.
+- **Global Background Watermark**: A faint logo (`opacity: 0.04`) sits embedded inside the `body::before` CSS rule so it hovers universally across the interface. 
+- **Media Galleries**: Do not rely on JavaScript for masonry images. Use `display: grid;` and structure cards with `.media-item`.
+- **Media Ratios:** Always format videos using `object-fit: contain;` coupled with a solid background (instead of `cover`). Vertically aligned MP4 files (from phones) will stretch and tear aesthetically if framed with `cover`. 
+- **Lightbox**: Image expanding relies on a custom Vanilla JS block mapped at the exact bottom of `_layouts/default.html` utilizing absolute coordinates and z-indexing instead of jQuery dependencies.
