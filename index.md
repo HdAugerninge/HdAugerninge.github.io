@@ -61,21 +61,33 @@ title: Home - Fantasy Printing Art
     <p style="text-align: center; margin-bottom: 2rem; color: var(--text-secondary);">Interested in a personal recommendation or quote? Fill out the form or reach out directly!</p>
     
     <div class="contact-form">
-        <!-- Form Action points to Formspree. Once you sign up for Formspree.io, put your form's ID here! -->
-        <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
+        <div data-fs-success style="color: var(--accent-cyan); text-align: center; margin-bottom: 1rem; font-weight: 800;">Thanks for reaching out! I'll get back to you shortly.</div>
+        <div data-fs-error style="color: #ff6b6b; text-align: center; margin-bottom: 1rem;"></div>
+        
+        <form id="my-form">
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" data-fs-field required>
+                <span data-fs-error="name" style="color: #ff6b6b; font-size: 0.85rem; display: block; margin-top: 5px;"></span>
             </div>
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" name="_replyto" required>
+                <input type="email" id="email" name="email" data-fs-field required>
+                <span data-fs-error="email" style="color: #ff6b6b; font-size: 0.85rem; display: block; margin-top: 5px;"></span>
             </div>
             <div class="form-group">
                 <label for="message">What are you looking for?</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                <textarea id="message" name="message" rows="5" data-fs-field required></textarea>
+                <span data-fs-error="message" style="color: #ff6b6b; font-size: 0.85rem; display: block; margin-top: 5px;"></span>
             </div>
-            <button type="submit" class="btn-primary form-submit-btn">Send Message</button>
+            <button type="submit" class="btn-primary form-submit-btn" data-fs-submit-btn>Send Message</button>
         </form>
     </div>
+
+    <!-- Formspree AJAX Script -->
+    <script>
+      window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+      formspree('initForm', { formElement: '#my-form', formId: 'mgornylp' });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </div>
