@@ -16,10 +16,16 @@ title: Home - Fantasy Printing Art
     <h2>What I Offer</h2>
     <div class="grid">
         <div class="card">
-            <h3>🐉 Dragons & Fidget Toys</h3>
-            <p>Fascinating, articulated dragons and satisfying fidget toys available in a massive variety of colors. Perfect for gifts or personal collections!</p>
+            <h3>🐉 Articulated Dragons</h3>
+            <p>Fascinating, highly detailed articulated dragons available in a massive variety of colors. Perfect for centerpieces or thoughtful gifts!</p>
             <br>
-            <a href="{{ '/dragons.html' | relative_url }}">View Gallery &rarr;</a>
+            <a href="{{ '/dragons.html' | relative_url }}">View Dragons &rarr;</a>
+        </div>
+        <div class="card">
+            <h3>🧩 Fidget Toys</h3>
+            <p>Endlessly satisfying, interactive 3D printed fidget toys. Designed to calm the mind and keep your hands busy.</p>
+            <br>
+            <a href="{{ '/fidgets.html' | relative_url }}">Explore Fidgets &rarr;</a>
         </div>
         <div class="card">
             <h3>⚔️ Pop Culture Merch</h3>
