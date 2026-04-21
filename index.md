@@ -36,7 +36,7 @@ lang: de
         </div>
         <div class="card">
             <h3>🔧 Praktische Lösungen</h3>
-            <p>Suchen Sie nach kleinen Alltagshelfern für die Küche, das Auto oder das Wohnzimmer? Ich finde für Sie das perfekte 3D-Modell im Netz und passe es genau an Ihre Bedürfnisse an – sei es durch Anpassung der Größe, individuelle Farbwahl oder Hinzufügen von persönlichem Text!</p>
+            <p>Suchen Sie nach kleinen Alltagshelfern für die Küche, das Auto oder das Wohnzimmer? Ich finde für Sie das richtige 3D-Modell im Netz und passe es genau an Ihre Bedürfnisse an – sei es durch Anpassung der Größe, individuelle Farbwahl oder Hinzufügen von persönlichem Text!</p>
             <br>
             <a href="{{ '/practical.html' | relative_url }}">Lösungen ansehen &rarr;</a>
         </div>
@@ -56,7 +56,7 @@ lang: de
             <ul style="margin-top: 10px; margin-bottom: 10px;">
                 <li style="margin-left: 20px;">Die Menge des benötigten Materials</li>
                 <li style="margin-left: 20px;">Die reine Druckzeit</li>
-                <li style="margin-left: 20px;">Benötigte individuelle 3D-Modellierung</li>
+                <li style="margin-left: 20px;">Benötigte individuelle Modellanpassung und Nachbearbeitung</li>
             </ul>
             <p>Kontaktieren Sie mich gerne für ein kostenloses, persönliches Angebot!</p>
         </div>
