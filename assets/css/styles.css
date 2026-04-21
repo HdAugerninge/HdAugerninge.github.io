@@ -24,23 +24,32 @@ body {
   position: relative;
 }
 
-body::before {
-  content: "";
+.fixed-logo-badge {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50vw;
-  height: 50vw;
-  max-width: 600px;
-  max-height: 600px;
-  background-image: url('/resources/logo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.04;
-  z-index: -1;
-  pointer-events: none;
+  bottom: 30px;
+  right: 30px;
+  width: 80px;
+  height: 80px;
+  z-index: 1001;
+  opacity: 0.5;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none; /* Allows clicks to pass through if it overlaps something */
+}
+
+.fixed-logo-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .fixed-logo-badge {
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0.3;
+  }
 }
 
 .container {
