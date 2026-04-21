@@ -6,7 +6,7 @@ title: Practical Solutions
 <div class="container" style="margin-top: 100px; min-height: 60vh;">
     <h2>Practical Solutions</h2>
     <p style="text-align: center; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem auto;">
-        Need a replacement part, a custom bracket, or a unique tool? I specialize in designing and printing solutions for everyday problems. Let's fix it together.
+        Looking for daily helpers for the kitchen, car, or living room? I will find the perfect model on the web and custom-tailor it to your needs—whether that means scaling the size, adapting the colors, or embedding personalized text!
     </p>
     
     <div class="grid">

@@ -36,7 +36,7 @@ lang: de
         </div>
         <div class="card">
             <h3>🔧 Praktische Lösungen</h3>
-            <p>Brauchen Sie ein Ersatzteil, eine passgenaue Halterung oder ein einzigartiges Werkzeug? Ich spezialisiere mich auf das Entwerfen und Drucken von Lösungen für alltägliche Probleme.</p>
+            <p>Suchen Sie nach kleinen Alltagshelfern für die Küche, das Auto oder das Wohnzimmer? Ich finde für Sie das perfekte 3D-Modell im Netz und passe es genau an Ihre Bedürfnisse an – sei es durch Anpassung der Größe, individuelle Farbwahl oder Hinzufügen von persönlichem Text!</p>
             <br>
             <a href="{{ '/practical.html' | relative_url }}">Lösungen ansehen &rarr;</a>
         </div>

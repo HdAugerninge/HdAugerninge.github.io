@@ -36,7 +36,7 @@ title: Home - Fantasy Printing Art
         </div>
         <div class="card">
             <h3>🔧 Practical Solutions</h3>
-            <p>Need a replacement part, a custom bracket, or a unique tool? I specialize in designing and printing solutions for everyday problems.</p>
+            <p>Looking for daily helpers for the kitchen, car, or living room? I will find the perfect model on the web and custom-tailor it to your needs—whether that means scaling the size, adapting the colors, or embedding personalized text!</p>
             <br>
             <a href="{{ '/practical.html' | relative_url }}">See Solutions &rarr;</a>
         </div>
