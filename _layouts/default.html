@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+    <!-- Load modern font: Outfit for a technical, modern feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="glass-nav">
+        <div class="container nav-container">
+            <a href="{{ '/' | relative_url }}" class="logo">HdAugenringe <span>3D</span></a>
+            <nav>
+                <a href="{{ '/' | relative_url }}">Home</a>
+                <a href="{{ '/dragons.html' | relative_url }}">Dragons & Fidgets</a>
+                <a href="{{ '/merch.html' | relative_url }}">Merch</a>
+                <a href="{{ '/practical.html' | relative_url }}">Practical</a>
+                <a href="#contact" class="btn-primary">Contact Me</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; {{ site.time | date: '%Y' }} HdAugenringe 3D Printing.</p>
+            <div class="social-links">
+                <!-- Replace # with actual URLs later -->
+                <a href="#" target="_blank" aria-label="Facebook">📘 Facebook</a>
+                <a href="#" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                <a href="mailto:your.email@example.com">✉️ Email</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
