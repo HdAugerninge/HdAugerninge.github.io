@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title | default: site.title }}</title>
+    {% assign lang = page.lang | default: site.default_lang | default: "en" %}
+    {% assign ui = site.data[lang] %}
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
     <!-- Load modern font: Outfit for a technical, modern feel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,12 +19,19 @@
         <div class="container nav-container">
             <a href="{{ '/' | relative_url }}" class="logo">Fantasy Printing <span>Art</span></a>
             <nav>
-                <a href="{{ '/' | relative_url }}">Home</a>
-                <a href="{{ '/dragons.html' | relative_url }}">Dragons</a>
-                <a href="{{ '/fidgets.html' | relative_url }}">Fidgets</a>
-                <a href="{{ '/nerdstuff.html' | relative_url }}">Nerd Stuff</a>
-                <a href="{{ '/practical.html' | relative_url }}">Practical</a>
-                <a href="#contact" class="btn-primary">Contact Me</a>
+                <a href="{{ '/' | relative_url }}">{{ ui.nav.home }}</a>
+                <a href="{{ '/dragons.html' | relative_url }}">{{ ui.nav.dragons }}</a>
+                <a href="{{ '/fidgets.html' | relative_url }}">{{ ui.nav.fidgets }}</a>
+                <a href="{{ '/nerdstuff.html' | relative_url }}">{{ ui.nav.nerdstuff }}</a>
+                <a href="{{ '/practical.html' | relative_url }}">{{ ui.nav.practical }}</a>
+                
+                <!-- Language Switcher -->
+                <div class="lang-switcher" style="margin: 0 10px; display: inline-flex; gap: 5px;">
+                    <a href="{{ '/' | relative_url }}" style="font-size: 1.2rem; opacity: {% if lang == 'de' %}1{% else %}0.5{% endif %}; filter: grayscale({% if lang == 'de' %}0{% else %}100%{% endif %});">🇩🇪</a>
+                    <a href="{{ '/en/' | relative_url }}" style="font-size: 1.2rem; opacity: {% if lang == 'en' %}1{% else %}0.5{% endif %}; filter: grayscale({% if lang == 'en' %}0{% else %}100%{% endif %});">🇬🇧</a>
+                </div>
+                
+                <a href="{{ '/' | relative_url }}#contact" class="btn-primary">{{ ui.nav.contact }}</a>
             </nav>
         </div>
     </header>
@@ -33,7 +42,7 @@
 
     <footer class="footer">
         <div class="container footer-container">
-            <p>&copy; {{ site.time | date: '%Y' }} Fantasy Printing Art.</p>
+            <p>&copy; {{ site.time | date: '%Y' }} {{ ui.footer.rights }}</p>
             <div class="social-links">
                 <!-- Social and Contact Links -->
                 <a href="https://www.facebook.com/profile.php?id=61588578691371" target="_blank" aria-label="Facebook">📘 Facebook</a>

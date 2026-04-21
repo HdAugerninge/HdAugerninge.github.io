@@ -1,0 +1,13 @@
+# English UI Strings
+nav:
+  home: "Home"
+  dragons: "Dragons"
+  fidgets: "Fidgets"
+  nerdstuff: "Nerd Stuff"
+  practical: "Practical"
+  contact: "Contact Me"
+footer:
+  rights: "Fantasy Printing Art."
+lang_switcher:
+  de_url: "/"
+  en_url: "/en/"

@@ -1,0 +1,13 @@
+# German UI Strings
+nav:
+  home: "Startseite"
+  dragons: "Drachen"
+  fidgets: "Fidgets"
+  nerdstuff: "Nerd-Kram"
+  practical: "Praktisches"
+  contact: "Kontakt"
+footer:
+  rights: "Fantasy Printing Art."
+lang_switcher:
+  de_url: "/"
+  en_url: "/en/"

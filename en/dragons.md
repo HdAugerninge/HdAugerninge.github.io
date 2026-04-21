@@ -1,12 +1,12 @@
 ---
+lang: en
 layout: default
-title: Bewegliche Drachen
-lang: de
+title: Articulated Dragons
 ---
 <div class="container" style="margin-top: 100px; min-height: 60vh;">
-    <h2>Bewegliche Drachen</h2>
+    <h2>Articulated Dragons</h2>
     <p style="text-align: center; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem auto;">
-        Willkommen in der Galerie! Hier präsentiere ich die faszinierenden, detailreichen beweglichen Drachen, die in unzähligen Farbvariationen erhältlich sind.
+        Welcome to the gallery! Here I showcase the fascinating, articulated dragons available in a massive variety of colors.
     </p>
 
     <!-- Gloomsworn Section -->
