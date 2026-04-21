@@ -17,7 +17,10 @@
 <body>
     <header class="glass-nav">
         <div class="container nav-container">
-            <a href="{{ '/' | relative_url }}" class="logo">Fantasy Printing <span>Art</span></a>
+            <a href="{{ '/' | relative_url }}" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                <img src="{{ '/resources/logo.png' | relative_url }}" alt="Logo" style="height: 45px; width: auto; object-fit: contain;">
+                <span class="logo">Fantasy Printing <span>Art</span></span>
+            </a>
             <nav>
                 <a href="{{ '/' | relative_url }}">{{ ui.nav.home }}</a>
                 <a href="{{ '/dragons.html' | relative_url }}">{{ ui.nav.dragons }}</a>
