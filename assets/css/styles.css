@@ -338,6 +338,8 @@ a:hover {
   grid-column: span 2;
   grid-row: span 2;
   height: calc(500px + 1.5rem);
+  object-fit: contain;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* Responsive adjustments */
