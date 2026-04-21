@@ -7,7 +7,7 @@ title: Home - Fantasy Printing Art
     <div class="hero-bg"></div>
     <div class="hero-content">
         <h1>Bringing Your Ideas to Life in 3D</h1>
-        <p>Your local expert for custom dragons, fidget toys, pop culture merchandise, and practical solutions.</p>
+        <p>Your local expert for custom dragons, fidget toys, nerd stuff, and practical solutions.</p>
         <a href="#services" class="btn-primary" style="display:inline-block;">Explore Offerings</a>
     </div>
 </div>
@@ -28,10 +28,10 @@ title: Home - Fantasy Printing Art
             <a href="{{ '/fidgets.html' | relative_url }}">Explore Fidgets &rarr;</a>
         </div>
         <div class="card">
-            <h3>⚔️ Pop Culture Merch</h3>
-            <p>Exclusive 3D printed merchandise inspired by Lord of the Rings, Star Wars, Harry Potter, and more. Highly detailed and customizable.</p>
+            <h3>⚔️ Nerd Stuff</h3>
+            <p>Exclusive 3D printed nerd stuff inspired by Lord of the Rings, Star Wars, Harry Potter, and more. Highly detailed and customizable.</p>
             <br>
-            <a href="{{ '/merch.html' | relative_url }}">Explore Merch &rarr;</a>
+            <a href="{{ '/nerdstuff.html' | relative_url }}">Explore Nerd Stuff &rarr;</a>
         </div>
         <div class="card">
             <h3>🔧 Practical Solutions</h3>
