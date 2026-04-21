@@ -41,6 +41,42 @@
             </div>
         </div>
     </footer>
-</body>
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
 
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var modal = document.getElementById("lightbox-modal");
+        var modalImg = document.getElementById("lightbox-img");
+        var closeBtn = document.getElementsByClassName("lightbox-close")[0];
+        
+        var images = document.querySelectorAll("img.media-item");
+        
+        images.forEach(function(img) {
+            img.style.cursor = "zoom-in";
+            img.onclick = function(){
+                modal.style.display = "flex";
+                modalImg.src = this.src;
+            }
+        });
+
+        if(closeBtn) {
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+        }
+        
+        if(modal) {
+            modal.onclick = function(e) {
+                if(e.target === modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+    });
+    </script>
+</body>
 </html>
