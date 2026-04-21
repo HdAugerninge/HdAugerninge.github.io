@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home - HdAugenringe 3D
+title: Home - Fantasy Printing Art
 ---
 
 <div class="hero">
