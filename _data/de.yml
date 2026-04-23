@@ -1,10 +1,13 @@
 # German UI Strings
 nav:
   home: "Startseite"
+  models_category: "Modelle & Inspiration"
   dragons: "Drachen"
   fidgets: "Fidgets"
   nerdstuff: "Nerd-Kram"
   practical: "Praktisches"
+  colors: "Farben"
+  about: "Über mich"
   contact: "Kontakt"
 footer:
   rights: "Fantasy Printing Art."

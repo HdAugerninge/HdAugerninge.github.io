@@ -1,10 +1,13 @@
 # English UI Strings
 nav:
   home: "Home"
+  models_category: "Models & Inspiration"
   dragons: "Dragons"
   fidgets: "Fidgets"
   nerdstuff: "Nerd Stuff"
   practical: "Practical"
+  colors: "Colors"
+  about: "About Me"
   contact: "Contact Me"
 footer:
   rights: "Fantasy Printing Art."

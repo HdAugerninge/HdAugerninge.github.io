@@ -1,0 +1,20 @@
+---
+layout: default
+title: Über mich
+lang: de
+---
+
+<div class="container" style="margin-top: 120px; min-height: 60vh;">
+    <h2>Über mich & Fantasy Printing Art</h2>
+    <div class="card" style="max-width: 800px; margin: 0 auto;">
+        <p>
+            Willkommen bei Fantasy Printing Art! Ich bin Tobias und leidenschaftlicher 3D-Druck-Enthusiast. 
+        </p>
+        <p style="margin-top: 1rem;">
+            Hier kannst du mehr über meine Geschichte, meine Drucker und meine Vision für dieses handwerkliche Business erfahren.
+        </p>
+        <p style="margin-top: 1rem; color: var(--text-secondary);">
+            [ Platzhalter: Füge hier deinen persönlichen Text und Bilder von dir oder deiner Werkstatt ein! ]
+        </p>
+    </div>
+</div>

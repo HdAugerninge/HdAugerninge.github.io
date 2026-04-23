@@ -23,10 +23,19 @@
             </a>
             <nav>
                 <a href="{{ '/' | relative_url }}">{{ ui.nav.home }}</a>
-                <a href="{{ '/dragons.html' | relative_url }}">{{ ui.nav.dragons }}</a>
-                <a href="{{ '/fidgets.html' | relative_url }}">{{ ui.nav.fidgets }}</a>
-                <a href="{{ '/nerdstuff.html' | relative_url }}">{{ ui.nav.nerdstuff }}</a>
-                <a href="{{ '/practical.html' | relative_url }}">{{ ui.nav.practical }}</a>
+                
+                <div class="nav-dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">{{ ui.nav.models_category }}</a>
+                    <div class="dropdown-content">
+                        <a href="{{ '/dragons.html' | relative_url }}">{{ ui.nav.dragons }}</a>
+                        <a href="{{ '/fidgets.html' | relative_url }}">{{ ui.nav.fidgets }}</a>
+                        <a href="{{ '/nerdstuff.html' | relative_url }}">{{ ui.nav.nerdstuff }}</a>
+                        <a href="{{ '/practical.html' | relative_url }}">{{ ui.nav.practical }}</a>
+                    </div>
+                </div>
+                
+                <a href="{{ '/colors.html' | relative_url }}">{{ ui.nav.colors }}</a>
+                <a href="{{ '/about.html' | relative_url }}">{{ ui.nav.about }}</a>
                 
                 <!-- Language Switcher -->
                 <div class="lang-switcher" style="margin: 0 10px; display: inline-flex; gap: 5px;">
