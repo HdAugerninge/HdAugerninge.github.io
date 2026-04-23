@@ -17,13 +17,15 @@
 <body>
     <header class="glass-nav">
         <div class="container nav-container">
-            <a href="{{ '/' | relative_url }}" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
-                <img src="{{ '/resources/logo.png' | relative_url }}" alt="Logo" style="height: 45px; width: auto; object-fit: contain;">
+            <a href="{{ '   /' | relative_url }}"
+                style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                <img src="{{ '/resources/logo.png' | relative_url }}" alt="Logo"
+                    style="height: 45px; width: auto; object-fit: contain;">
                 <span class="logo">Fantasy Printing <span>Art</span></span>
             </a>
             <nav>
                 <a href="{{ '/' | relative_url }}">{{ ui.nav.home }}</a>
-                
+
                 <div class="nav-dropdown">
                     <a href="javascript:void(0)" class="dropbtn">{{ ui.nav.models_category }}</a>
                     <div class="dropdown-content">
@@ -33,16 +35,18 @@
                         <a href="{{ '/practical.html' | relative_url }}">{{ ui.nav.practical }}</a>
                     </div>
                 </div>
-                
+
                 <a href="{{ '/colors.html' | relative_url }}">{{ ui.nav.colors }}</a>
                 <a href="{{ '/about.html' | relative_url }}">{{ ui.nav.about }}</a>
-                
+
                 <!-- Language Switcher -->
                 <div class="lang-switcher" style="margin: 0 10px; display: inline-flex; gap: 5px;">
-                    <a href="{{ '/' | relative_url }}" style="font-size: 1.2rem; opacity: {% if lang == 'de' %}1{% else %}0.5{% endif %}; filter: grayscale({% if lang == 'de' %}0{% else %}100%{% endif %});">🇩🇪</a>
-                    <a href="{{ '/en/' | relative_url }}" style="font-size: 1.2rem; opacity: {% if lang == 'en' %}1{% else %}0.5{% endif %}; filter: grayscale({% if lang == 'en' %}0{% else %}100%{% endif %});">🇬🇧</a>
+                    <a href="{{ '/' | relative_url }}"
+                        style="font-size: 1.2rem; opacity: {% if lang == 'de' %}1{% else %}0.5{% endif %}; filter: grayscale({% if lang == 'de' %}0{% else %}100%{% endif %});">🇩🇪</a>
+                    <a href="{{ '/en/' | relative_url }}"
+                        style="font-size: 1.2rem; opacity: {% if lang == 'en' %}1{% else %}0.5{% endif %}; filter: grayscale({% if lang == 'en' %}0{% else %}100%{% endif %});">🇬🇧</a>
                 </div>
-                
+
                 <a href="{{ '/' | relative_url }}#contact" class="btn-primary">{{ ui.nav.contact }}</a>
             </nav>
         </div>
@@ -55,16 +59,20 @@
     <footer class="footer">
         <div class="container footer-container">
             <div style="display: flex; align-items: center; gap: 15px;">
-                <img src="{{ '/resources/logo.png' | relative_url }}" alt="Logo" style="height: 40px; width: auto; opacity: 0.8;">
+                <img src="{{ '/resources/logo.png' | relative_url }}" alt="Logo"
+                    style="height: 40px; width: auto; opacity: 0.8;">
                 <div style="display: flex; flex-direction: column; gap: 5px;">
                     <p>&copy; {{ site.time | date: '%Y' }} {{ ui.footer.rights }}</p>
-                    <a href="{{ '/impressum.html' | relative_url }}" style="font-size: 0.8rem; color: var(--text-secondary);">{{ ui.footer.impressum }}</a>
+                    <a href="{{ '/impressum.html' | relative_url }}"
+                        style="font-size: 0.8rem; color: var(--text-secondary);">{{ ui.footer.impressum }}</a>
                 </div>
             </div>
             <div class="social-links">
                 <!-- Social and Contact Links -->
-                <a href="https://www.facebook.com/profile.php?id=61588578691371" target="_blank" aria-label="Facebook">📘 Facebook</a>
-                <a href="https://www.instagram.com/fantasyprintingart/" target="_blank" aria-label="Instagram">📸 Instagram</a>
+                <a href="https://www.facebook.com/profile.php?id=61588578691371" target="_blank"
+                    aria-label="Facebook">📘 Facebook</a>
+                <a href="https://www.instagram.com/fantasyprintingart/" target="_blank" aria-label="Instagram">📸
+                    Instagram</a>
                 <a href="mailto:h3rr.der.augenringe@googlemail.com" aria-label="Email">✉️ Email</a>
             </div>
         </div>
@@ -81,35 +89,36 @@
     </div>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var modal = document.getElementById("lightbox-modal");
-        var modalImg = document.getElementById("lightbox-img");
-        var closeBtn = document.getElementsByClassName("lightbox-close")[0];
-        
-        var images = document.querySelectorAll("img.media-item");
-        
-        images.forEach(function(img) {
-            img.style.cursor = "zoom-in";
-            img.onclick = function(){
-                modal.style.display = "flex";
-                modalImg.src = this.src;
-            }
-        });
+        document.addEventListener("DOMContentLoaded", function () {
+            var modal = document.getElementById("lightbox-modal");
+            var modalImg = document.getElementById("lightbox-img");
+            var closeBtn = document.getElementsByClassName("lightbox-close")[0];
 
-        if(closeBtn) {
-            closeBtn.onclick = function() {
-                modal.style.display = "none";
-            }
-        }
-        
-        if(modal) {
-            modal.onclick = function(e) {
-                if(e.target === modal) {
+            var images = document.querySelectorAll("img.media-item");
+
+            images.forEach(function (img) {
+                img.style.cursor = "zoom-in";
+                img.onclick = function () {
+                    modal.style.display = "flex";
+                    modalImg.src = this.src;
+                }
+            });
+
+            if (closeBtn) {
+                closeBtn.onclick = function () {
                     modal.style.display = "none";
                 }
             }
-        }
-    });
+
+            if (modal) {
+                modal.onclick = function (e) {
+                    if (e.target === modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            }
+        });
     </script>
 </body>
+
 </html>

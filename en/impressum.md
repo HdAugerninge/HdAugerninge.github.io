@@ -19,7 +19,7 @@ lang: en
         <h3 style="margin-top: 2rem;">Contact</h3>
         <p>
     
-            Email: h3rr.der.augenringe@googlemail.com
+            Email: info@fantasy-printing-art.de
         </p>
 
         <h3 style="margin-top: 2rem;">Person responsible for content according to § 55 Abs. 2 RStV</h3>
