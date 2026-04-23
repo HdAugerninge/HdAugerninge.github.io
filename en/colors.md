@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Colors
+title: Colors and Materials
 lang: en
 ---
 
 <div class="container" style="margin-top: 120px; min-height: 60vh;">
-    <h2>Available Colors</h2>
+    <h2>Available Colors and Materials</h2>
     <p style="text-align: center; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem auto;">
         I have an extensive library of premium filaments at my disposal. Explore the various possibilities for your models here.
     </p>

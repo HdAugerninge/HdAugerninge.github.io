@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Farben
+title: Farben und Material
 lang: de
 ---
 
 <div class="container" style="margin-top: 120px; min-height: 60vh;">
-    <h2>Verfügbare Farben</h2>
+    <h2>Verfügbare Farben und Materialien</h2>
     <p style="text-align: center; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem auto;">
         Ich verfüge über eine umfangreiche Auswahl an Premium-Filamenten. Entdecke hier die verschiedenen Möglichkeiten für deine Modelle.
     </p>
