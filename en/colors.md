@@ -14,5 +14,13 @@ lang: en
         <div class="card" style="text-align: center;">
             <p style="padding: 3rem 0; color: var(--text-secondary);">[ Gallery Placeholder ]<br><br>Upload pictures of available filaments/colors here!</p>
         </div>
+    <div class="card" style="margin-top: 4rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <h3>PLA & Environment</h3>
+        <p>Sustainability is important to me. Most of my models are printed using PLA (Polylactic Acid).</p>
+        <ul style="margin-top: 1rem; margin-left: 1.5rem; color: var(--text-secondary);">
+            <li><strong>Renewable Resources:</strong> PLA is derived from plant-based resources like corn starch or sugar cane.</li>
+            <li><strong>Biodegradable:</strong> Under industrial composting conditions, PLA is biodegradable.</li>
+            <li><strong>Eco-conscious:</strong> Compared to traditional petroleum-based plastics, the production of PLA has a significantly lower carbon footprint.</li>
+        </ul>
     </div>
 </div>
