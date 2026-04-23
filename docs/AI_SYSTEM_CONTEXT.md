@@ -16,6 +16,15 @@ Because GitHub Pages restricts some custom Jekyll i18n plugins in safe-mode:
 We intentionally removed Jekyll's base minimals.
 - **Design Core**: Pure CSS defined inside `assets/css/styles.css`. Look and feel relies heavily on `#0b0f19` dark modes, neon cyan/purple combinations (`#00f2fe`), and heavy Glassmorphism overlay panels.
 - **Global Background Watermark**: A faint logo (`opacity: 0.04`) sits embedded inside the `body::before` CSS rule so it hovers universally across the interface. 
-- **Media Galleries**: Do not rely on JavaScript for masonry images. Use `display: grid;` and structure cards with `.media-item`.
+- **Dropdown Navigation**: Floating dropdowns (like the one for "Models & Inspiration") must use an invisible `::after` pseudo-element bridge on the `.nav-dropdown` container. This ensures the `:hover` state is maintained while the cursor crosses the visual gap between the trigger and the menu content.
+- **Media Galleries**: Use `display: grid;` and structure cards with `.media-item`. This class applies to both `<img>` and `<video>` elements.
 - **Media Ratios:** Always format videos using `object-fit: contain;` coupled with a solid background (instead of `cover`). Vertically aligned MP4 files (from phones) will stretch and tear aesthetically if framed with `cover`. 
-- **Lightbox**: Image expanding relies on a custom Vanilla JS block mapped at the exact bottom of `_layouts/default.html` utilizing absolute coordinates and z-indexing instead of jQuery dependencies.
+
+## Universal Lightbox
+The media expansion logic is implemented in Vanilla JS at the bottom of `_layouts/default.html`.
+- **Media Support**: The lightbox supports both images and videos. It automatically switches between `<img>` and `<video>` tags based on the source element.
+- **Navigation**:
+    - **UI**: Clickable arrows (`.lightbox-prev`, `.lightbox-next`) are available on the sides.
+    - **Keyboard**: Supports `ArrowLeft`, `ArrowRight` for navigation and `Escape` for closing.
+    - **Behavior**: The gallery wraps around (end-to-beginning) and uses all `.media-item` elements found on the current page.
+- **Video Handling**: Videos in the lightbox should be set to `autoplay`, `loop`, `muted`, and `playsinline` to match the site's aesthetic.
