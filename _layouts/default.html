@@ -73,7 +73,7 @@
                     aria-label="Facebook">📘 Facebook</a>
                 <a href="https://www.instagram.com/fantasyprintingart/" target="_blank" aria-label="Instagram">📸
                     Instagram</a>
-                <a href="mailto:h3rr.der.augenringe@googlemail.com" aria-label="Email">✉️ Email</a>
+                <a href="mailto:.der.augenringe@googlemail.com" aria-label="Email">✉️ Email</a>
             </div>
         </div>
     </footer>
@@ -85,28 +85,75 @@
     <!-- Lightbox Modal -->
     <div id="lightbox-modal" class="lightbox">
         <span class="lightbox-close">&times;</span>
+        <span class="lightbox-prev">&#10094;</span>
         <img class="lightbox-content" id="lightbox-img">
+        <video class="lightbox-content" id="lightbox-video" autoplay loop muted playsinline style="display: none;"></video>
+        <span class="lightbox-next">&#10095;</span>
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             var modal = document.getElementById("lightbox-modal");
             var modalImg = document.getElementById("lightbox-img");
+            var modalVid = document.getElementById("lightbox-video");
             var closeBtn = document.getElementsByClassName("lightbox-close")[0];
+            var prevBtn = document.querySelector(".lightbox-prev");
+            var nextBtn = document.querySelector(".lightbox-next");
 
-            var images = document.querySelectorAll("img.media-item");
+            var mediaItems = Array.from(document.querySelectorAll(".media-item"));
+            var currentIndex = 0;
 
-            images.forEach(function (img) {
-                img.style.cursor = "zoom-in";
-                img.onclick = function () {
+            function showMedia(index) {
+                if (mediaItems.length === 0) return;
+                if (index < 0) index = mediaItems.length - 1;
+                if (index >= mediaItems.length) index = 0;
+                currentIndex = index;
+
+                var item = mediaItems[currentIndex];
+                if (item.tagName.toLowerCase() === 'img') {
+                    modalImg.src = item.src;
+                    modalImg.style.display = 'block';
+                    modalVid.style.display = 'none';
+                    modalVid.pause();
+                } else if (item.tagName.toLowerCase() === 'video') {
+                    // Get video source from <source> tag or src attribute
+                    var source = item.src;
+                    if (!source && item.querySelector('source')) {
+                        source = item.querySelector('source').src;
+                    }
+                    modalVid.src = source;
+                    modalVid.style.display = 'block';
+                    modalImg.style.display = 'none';
+                    modalVid.play();
+                }
+            }
+
+            mediaItems.forEach(function (item, index) {
+                item.style.cursor = "zoom-in";
+                item.onclick = function () {
                     modal.style.display = "flex";
-                    modalImg.src = this.src;
+                    showMedia(index);
                 }
             });
+
+            if (prevBtn) {
+                prevBtn.onclick = function (e) {
+                    e.stopPropagation();
+                    showMedia(currentIndex - 1);
+                }
+            }
+
+            if (nextBtn) {
+                nextBtn.onclick = function (e) {
+                    e.stopPropagation();
+                    showMedia(currentIndex + 1);
+                }
+            }
 
             if (closeBtn) {
                 closeBtn.onclick = function () {
                     modal.style.display = "none";
+                    modalVid.pause();
                 }
             }
 
@@ -114,9 +161,21 @@
                 modal.onclick = function (e) {
                     if (e.target === modal) {
                         modal.style.display = "none";
+                        modalVid.pause();
                     }
                 }
             }
+
+            document.addEventListener("keydown", function (e) {
+                if (modal.style.display === "flex") {
+                    if (e.key === "ArrowLeft") showMedia(currentIndex - 1);
+                    if (e.key === "ArrowRight") showMedia(currentIndex + 1);
+                    if (e.key === "Escape") {
+                        modal.style.display = "none";
+                        modalVid.pause();
+                    }
+                }
+            });
         });
     </script>
 </body>
