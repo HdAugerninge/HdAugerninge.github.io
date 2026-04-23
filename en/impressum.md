@@ -1,0 +1,42 @@
+---
+layout: default
+title: Legal Notice
+lang: en
+---
+
+<div class="container" style="margin-top: 120px; margin-bottom: 80px; max-width: 800px;">
+    <h1>Legal Notice / Impressum</h1>
+    
+    <div class="card" style="margin-top: 2rem;">
+        <h3>Information according to § 5 TMG</h3>
+        <p>
+            Tobias Suhrborg<br>
+            Theodor-Fontane-Weg 20<br>
+            45219 Essen<br>
+            Germany
+        </p>
+
+        <h3 style="margin-top: 2rem;">Contact</h3>
+        <p>
+    
+            Email: h3rr.der.augenringe@googlemail.com
+        </p>
+
+        <h3 style="margin-top: 2rem;">Person responsible for content according to § 55 Abs. 2 RStV</h3>
+        <p>
+            Tobias Suhrborg<br>
+            Theodor-Fontane-Weg 20<br>
+            45219 Essen
+        </p>
+
+        <h3 style="margin-top: 2rem;">Disclaimer</h3>
+        <h4>Liability for Contents</h4>
+        <p>As service providers, we are liable for own contents of these websites according to Sec. 7, paragraph 1 German Telemedia Act (TMG). However, according to Sec. 8 to 10 German Telemedia Act (TMG), service providers are not obligated to permanently monitor submitted or stored information or to search for evidences that indicate illegal activities.</p>
+
+        <h4>Liability for Links</h4>
+        <p>Our offer includes links to external third party websites. We have no influence on the contents of those websites, therefore we cannot guarantee for those contents. Providers or administrators of linked websites are always responsible for their own contents.</p>
+
+        <h4>Copyright</h4>
+        <p>Contents and compilations published on these websites by the providers are subject to German copyright laws. Reproduction, editing, distribution as well as the use of any kind outside the scope of the copyright law require a written permission of the author or originator.</p>
+    </div>
+</div>

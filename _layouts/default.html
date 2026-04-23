@@ -47,7 +47,10 @@
         <div class="container footer-container">
             <div style="display: flex; align-items: center; gap: 15px;">
                 <img src="{{ '/resources/logo.png' | relative_url }}" alt="Logo" style="height: 40px; width: auto; opacity: 0.8;">
-                <p>&copy; {{ site.time | date: '%Y' }} {{ ui.footer.rights }}</p>
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                    <p>&copy; {{ site.time | date: '%Y' }} {{ ui.footer.rights }}</p>
+                    <a href="{{ '/impressum.html' | relative_url }}" style="font-size: 0.8rem; color: var(--text-secondary);">{{ ui.footer.impressum }}</a>
+                </div>
             </div>
             <div class="social-links">
                 <!-- Social and Contact Links -->

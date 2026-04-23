@@ -8,6 +8,7 @@ nav:
   contact: "Kontakt"
 footer:
   rights: "Fantasy Printing Art."
+  impressum: "Impressum"
 lang_switcher:
   de_url: "/"
   en_url: "/en/"
