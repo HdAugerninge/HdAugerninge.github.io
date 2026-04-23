@@ -16,7 +16,7 @@ Because GitHub Pages restricts some custom Jekyll i18n plugins in safe-mode:
 We intentionally removed Jekyll's base minimals.
 - **Design Core**: Pure CSS defined inside `assets/css/styles.css`. Look and feel relies heavily on `#0b0f19` dark modes, neon cyan/purple combinations (`#00f2fe`), and heavy Glassmorphism overlay panels.
 - **Global Background Watermark**: A faint logo (`opacity: 0.04`) sits embedded inside the `body::before` CSS rule so it hovers universally across the interface. 
-- **Dropdown Navigation**: Floating dropdowns (like the one for "Models & Inspiration") must use an invisible `::after` pseudo-element bridge on the `.nav-dropdown` container. This ensures the `:hover` state is maintained while the cursor crosses the visual gap between the trigger and the menu content.
+- **Dropdown Navigation**: Floating dropdowns (like the one for "Models & Inspiration") use a `padding-bottom` bridge on the `.nav-dropdown` container. This extends the hoverable area to cover the visual gap between the trigger and the menu content, ensuring the menu stays open during mouse movement.
 - **Media Galleries**: Use `display: grid;` and structure cards with `.media-item`. This class applies to both `<img>` and `<video>` elements.
 - **Media Ratios:** Always format videos using `object-fit: contain;` coupled with a solid background (instead of `cover`). Vertically aligned MP4 files (from phones) will stretch and tear aesthetically if framed with `cover`. 
 
