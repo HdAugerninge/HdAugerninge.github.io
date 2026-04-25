@@ -3,15 +3,18 @@ import argparse
 import sys
 
 try:
-    from moviepy.editor import VideoFileClip
+    import imageio_ffmpeg as ffmpeg_pkg
 except ImportError:
-    print("Error: 'moviepy' is not installed.")
-    print("Please install it using: pip install moviepy")
+    print("Error: 'imageio-ffmpeg' is not installed.")
+    print("Please install it using: pip install imageio-ffmpeg")
     sys.exit(1)
+import subprocess
+import tempfile
+import shutil
 
-def convert_videos_to_gifs(directory, duration=10, delete_original=True, resize_width=480):
+def optimize_videos(directory, duration=15, resize_width=480, crf=28):
     """
-    Finds all .mp4 files in the specified directory and converts them to .gif.
+    Finds all .mp4 files in the specified directory and optimizes them for web use.
     """
     if not os.path.isdir(directory):
         print(f"Error: Directory '{directory}' does not exist.")
@@ -30,54 +33,75 @@ def convert_videos_to_gifs(directory, duration=10, delete_original=True, resize_
     print(f"Found {len(mp4_files)} videos to process.")
 
     for mp4_path in mp4_files:
-        gif_path = os.path.splitext(mp4_path)[0] + ".gif"
+        # Check if already optimized (we'll skip files with '_optimized' if we used that, 
+        # but here we overwrite, so we just process everything)
         
-        print(f"\n--- Processing: {os.path.basename(mp4_path)} ---")
         try:
-            with VideoFileClip(mp4_path) as clip:
-                # Determine end time for subclip
-                end_time = min(duration, clip.duration)
-                
-                # Extract subclip
-                gif_clip = clip.subclip(0, end_time)
-                
-                # Resize to keep GIF file size reasonable
-                if resize_width and clip.w > resize_width:
-                    gif_clip = gif_clip.resize(width=resize_width)
-                
-                # Write GIF with optimized settings
-                print(f"Writing GIF to: {gif_path}")
-                gif_clip.write_gif(gif_path, fps=10, logger=None)
+            ffmpeg_exe = ffmpeg_pkg.get_ffmpeg_exe()
             
-            print(f"Successfully created: {os.path.basename(gif_path)}")
+            # Create a temporary file for the optimized version
+            fd, temp_path = tempfile.mkstemp(suffix=".mp4")
+            os.close(fd)
             
-            if delete_original:
-                os.remove(mp4_path)
-                print(f"Deleted original: {os.path.basename(mp4_path)}")
+            print(f"\n--- Optimizing: {os.path.basename(mp4_path)} ---")
+            
+            # FFmpeg command for web-optimized MP4:
+            # -an: Remove audio
+            # -c:v libx264: H.264 codec
+            # -crf: Compression level (23 default, 28 is high compression)
+            # -preset slow: Better compression efficiency
+            # -movflags +faststart: Optimized for web playback
+            cmd = [
+                ffmpeg_exe,
+                "-y",
+                "-ss", "0",
+                "-t", str(duration),
+                "-i", mp4_path,
+                "-vf", f"scale={resize_width}:trunc(ow/a/2)*2",
+                "-an",
+                "-c:v", "libx264",
+                "-crf", str(crf),
+                "-preset", "slow",
+                "-movflags", "+faststart",
+                "-pix_fmt", "yuv420p", # Maximum compatibility
+                temp_path
+            ]
+            
+            result = subprocess.run(cmd, capture_output=True, text=True)
+            
+            if result.returncode != 0:
+                raise Exception(f"FFmpeg error: {result.stderr}")
+            
+            # Replace original with optimized version
+            shutil.move(temp_path, mp4_path)
+            print(f"Successfully optimized: {os.path.basename(mp4_path)}")
+            print(f"New size: {os.path.getsize(mp4_path) / 1024:.1f} KB")
                 
         except Exception as e:
             print(f"Error processing {mp4_path}: {e}")
+            if 'temp_path' in locals() and os.path.exists(temp_path):
+                os.remove(temp_path)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Find all .mp4 files in a folder and replace them with a max 10s long GIF.")
+    parser = argparse.ArgumentParser(description="Optimize .mp4 files for web (remove audio, compress, resize).")
     parser.add_argument("directory", nargs="?", default=".", help="Directory to scan (default: current directory)")
-    parser.add_argument("--keep", action="store_true", help="Keep original .mp4 files instead of deleting them")
-    parser.add_argument("--duration", type=int, default=10, help="Max duration of the GIF in seconds (default: 10)")
-    parser.add_argument("--width", type=int, default=480, help="Resize GIF to this width in pixels (default: 480)")
+    parser.add_argument("--duration", type=int, default=15, help="Max duration in seconds (default: 15)")
+    parser.add_argument("--width", type=int, default=480, help="Resize to this width (default: 480)")
+    parser.add_argument("--crf", type=int, default=28, help="Compression level 0-51. Higher = smaller file (default: 28)")
+    parser.add_argument("-y", "--yes", action="store_true", help="Skip confirmation prompt")
     
     args = parser.parse_args()
     
-    # Warning for destructive action
-    if not args.keep:
-        print("!!! WARNING: This script will DELETE original .mp4 files after conversion !!!")
+    if not args.yes:
+        print("!!! WARNING: This script will OVERWRITE original .mp4 files with optimized versions !!!")
         confirm = input("Are you sure you want to proceed? (y/n): ")
         if confirm.lower() != 'y':
             print("Aborted.")
             sys.exit(0)
 
-    convert_videos_to_gifs(
+    optimize_videos(
         args.directory, 
         duration=args.duration, 
-        delete_original=not args.keep,
-        resize_width=args.width
+        resize_width=args.width,
+        crf=args.crf
     )
