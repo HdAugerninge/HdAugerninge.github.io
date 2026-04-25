@@ -28,3 +28,22 @@ The media expansion logic is implemented in Vanilla JS at the bottom of `_layout
     - **Keyboard**: Supports `ArrowLeft`, `ArrowRight` for navigation and `Escape` for closing.
     - **Behavior**: The gallery wraps around (end-to-beginning) and uses all `.media-item` elements found on the current page.
 - **Video Handling**: Videos in the lightbox should be set to `autoplay`, `loop`, `muted`, and `playsinline` to match the site's aesthetic.
+
+## Process: Adding New Models
+The workflow for adding new content starts when a new file (image, video, or GIF) is added to the `resources/` folder.
+
+1. **Hierarchy Detection**:
+    - **Layer 1 (Page)**: The first subdirectory under `resources/models/` determines which page the item belongs to (e.g., `dragons/` -> `dragons.md`).
+    - **Layer 2 (Section)**: If there is a second subdirectory (e.g., `resources/models/dragons/Gloomsworn/`), this represents a specific **gallery section**. 
+    - **General Section**: If no second subdirectory exists, the item goes into the general section of the page.
+
+2. **Implementation**:
+    - **Update Includes**: Modify the corresponding HTML include in `_includes/` (e.g., `dragons_de.html` and `dragons_en.html`).
+    - **Media Tags**: 
+        - **Images/GIFs**: Use `<img class="media-item">`.
+        - **Videos**: Use `<video class="media-item media-video" autoplay loop muted playsinline>`.
+    - **Bilingual Sync**: Always apply changes to both German and English versions.
+
+3. **Naming**:
+    - **Alt Tags**: Provide descriptive `alt` attributes for all images/GIFs (e.g., `alt="Gloomsworn Detail"`).
+    - **Section Headers**: If a new Layer 2 folder is created, add a corresponding `<h3 class="gallery-title">` section to the HTML.
