@@ -3,20 +3,5 @@ lang: en
 layout: default
 title: Practical Solutions
 ---
-<div class="container" style="margin-top: 100px; min-height: 60vh;">
-    <h2>Practical Solutions</h2>
-    <p style="text-align: center; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem auto;">
-        Looking for daily helpers for the kitchen, car, or living room? I will find the perfect model on the web and custom-tailor it to your needs—whether that means scaling the size, adapting the colors, or embedding personalized text!
-    </p>
 
-    <!-- Miscellaneous Models Section -->
-    <div class="gallery-section">
-        <h3 class="gallery-title">More Models & Projects</h3>
-        <div class="media-grid">
-            <img class="media-item" src="/resources/models/rest/IMG_20260316_182332.jpg" alt="Project Model 1">
-            <img class="media-item" src="/resources/models/rest/IMG_20260316_182338.jpg" alt="Project Model 2">
-            <img class="media-item" src="/resources/models/rest/IMG_20260317_094320.jpg" alt="Project Model 3">
-            <img class="media-item" src="/resources/models/rest/IMG_20260317_094328.jpg" alt="Project Model 4">
-        </div>
-    </div>
-</div>
+{% include practical_en.html %}

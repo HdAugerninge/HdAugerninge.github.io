@@ -3,35 +3,5 @@ lang: en
 layout: default
 title: Nerd Stuff
 ---
-<div class="container" style="margin-top: 100px; min-height: 60vh;">
-    <h2>Nerd Stuff</h2>
-    <p style="text-align: center; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem auto;">
-        Exclusive 3D printed nerd stuff inspired by Lord of the Rings, Star Wars, Harry Potter, and more. Highly detailed and customizable!
-    </p>
 
-    <!-- Lord of the Rings Section -->
-    <div class="gallery-section">
-        <h3 class="gallery-title">Lord of the Rings - Light of Isildur Lamp</h3>
-        <div class="media-grid">
-            <img class="media-item" src="/resources/models/nerdstuff/HerrDerRingeLampe/IMG_20260221_215009.jpg" alt="Lord of the Rings Lamp">
-            <img class="media-item" src="/resources/models/nerdstuff/HerrDerRingeLampe/IMG_20260221_215013.jpg" alt="Lord of the Rings Lamp Detail">
-            <img class="media-item" src="/resources/models/nerdstuff/HerrDerRingeLampe/IMG_20260221_215025.jpg" alt="Lord of the Rings Lamp Detail">
-            <img class="media-item" src="/resources/models/nerdstuff/HerrDerRingeLampe/IMG_20260221_215034.jpg" alt="Lord of the Rings Lamp Detail">
-            <img class="media-item" src="/resources/models/nerdstuff/HerrDerRingeLampe/IMG_20260221_215043.jpg" alt="Lord of the Rings Lamp Detail">
-            <img class="media-item" src="/resources/models/nerdstuff/HerrDerRingeLampe/IMG_20260221_215054.jpg" alt="Lord of the Rings Lamp Detail">
-        </div>
-    </div>
-
-    <!-- Star Wars Section -->
-    <div class="gallery-section">
-        <h3 class="gallery-title">Star Wars Collection</h3>
-        <div class="media-grid">
-            <video class="media-item media-video" autoplay loop muted playsinline>
-                <source src="/resources/models/nerdstuff/TodessternLampe/VID_20260214_124831.mp4" type="video/mp4">
-            </video>
-            <img class="media-item" src="/resources/models/nerdstuff/TodessternRegal.jpg" alt="Death Star Shelf">
-            <img class="media-item" src="/resources/models/nerdstuff/LaserSchwertAnhaenger/IMG_20260222_004713.jpg" alt="Lightsaber Keychain">
-            <img class="media-item" src="/resources/models/nerdstuff/LaserSchwertAnhaenger/IMG_20260222_004726.jpg" alt="Lightsaber Keychain Detail">
-        </div>
-    </div>
-</div>
+{% include nerdstuff_en.html %}
