@@ -24,7 +24,7 @@
                 <span class="logo">Fantasy Printing <span>Art</span></span>
             </a>
             <nav>
-                <a href="{{ '/' | relative_url }}">{{ ui.nav.home }}</a>
+                {% comment %} Home link removed as logo already points home {% endcomment %}
 
                 <div class="nav-dropdown">
                     <a href="javascript:void(0)" class="dropbtn">{{ ui.nav.models_category }}</a>
@@ -40,7 +40,7 @@
                 <a href="{{ '/about.html' | relative_url }}">{{ ui.nav.about }}</a>
 
                 <!-- Language Switcher -->
-                <div class="lang-switcher" style="margin: 0 10px; display: inline-flex; gap: 5px;">
+                <div class="lang-switcher" style="margin: 0 5px; display: inline-flex; gap: 5px;">
                     <a href="{{ '/' | relative_url }}"
                         style="font-size: 1.2rem; opacity: {% if lang == 'de' %}1{% else %}0.5{% endif %}; filter: grayscale({% if lang == 'de' %}0{% else %}100%{% endif %});">🇩🇪</a>
                     <a href="{{ '/en/' | relative_url }}"
