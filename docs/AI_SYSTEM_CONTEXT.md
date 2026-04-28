@@ -36,7 +36,8 @@ The workflow for adding new content starts when a new file (image, video, or GIF
     - **Layer 1 (Page)**: The first subdirectory under `resources/models/` determines which page the item belongs to (e.g., `dragons/` -> `dragons.md`).
     - **Layer 2 (Section)**: If there is a second subdirectory (e.g., `resources/models/dragons/Gloomsworn/`), this represents a specific **gallery section**. 
     - **General Section**: If no second subdirectory exists, the item goes into the general section of the page.
-
+    - **Video size reduction**: If I added a video, you should reduce the file size by running `scripts/video_compress.py` and replacing the original video with the optimized version.
+    
 2. **Implementation**:
     - **Update Includes**: Modify the corresponding HTML include in `_includes/` (e.g., `dragons_de.html` and `dragons_en.html`).
     - **Media Tags**: 
