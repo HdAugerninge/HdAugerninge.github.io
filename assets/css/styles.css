@@ -1,12 +1,12 @@
 :root {
-  --bg-color: #0b0f19;
-  --bg-glass: rgba(15, 23, 42, 0.7);
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --accent-cyan: #00f2fe;
-  --accent-purple: #4facfe;
-  --card-bg: rgba(30, 41, 59, 0.5);
-  --border-glass: rgba(255, 255, 255, 0.1);
+  --bg-color: #050505;
+  --bg-glass: rgba(15, 10, 10, 0.85);
+  --text-primary: #fffaf0;
+  --text-secondary: #c5a059;
+  --accent-gold: #ffd700;
+  --accent-red: #d40000;
+  --card-bg: rgba(25, 15, 15, 0.7);
+  --border-glass: rgba(255, 215, 0, 0.15);
 }
 
 * {
@@ -70,19 +70,19 @@ h2 {
   text-align: center;
   margin-top: 4rem;
   margin-bottom: 2rem;
-  background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple));
+  background: linear-gradient(to right, var(--accent-gold), var(--accent-red));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 a {
-  color: var(--accent-cyan);
+  color: var(--accent-gold);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--accent-purple);
+  color: var(--accent-red);
 }
 
 /* Glass Navigation */
@@ -111,7 +111,7 @@ a:hover {
 }
 
 .logo span {
-  color: var(--accent-cyan);
+  color: var(--accent-gold);
 }
 
 .glass-nav nav {
@@ -177,20 +177,20 @@ a:hover {
 }
 
 .btn-primary {
-  background: linear-gradient(45deg, var(--accent-purple), var(--accent-cyan));
+  background: linear-gradient(45deg, var(--accent-red), var(--accent-gold));
   color: #000;
   padding: 0.6rem 1.5rem;
   border-radius: 30px;
   font-weight: 800;
   text-transform: uppercase;
-  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-primary:hover {
   color: #000;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 242, 254, 0.5);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
 }
 
 /* Hero Section */
@@ -224,7 +224,7 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(11, 15, 25, 0.2), var(--bg-color));
+  background: linear-gradient(to bottom, rgba(15, 10, 10, 0.2), var(--bg-color));
 }
 
 .hero-content {
@@ -269,11 +269,11 @@ a:hover {
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  border-color: rgba(0, 242, 254, 0.3);
+  border-color: rgba(255, 215, 0, 0.3);
 }
 
 .card h3 {
-  color: var(--accent-cyan);
+  color: var(--accent-gold);
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
@@ -311,7 +311,7 @@ a:hover {
 
 .form-group input:focus, .form-group textarea:focus {
   outline: none;
-  border-color: var(--accent-cyan);
+  border-color: var(--accent-gold);
 }
 
 .form-submit-btn {
@@ -349,7 +349,7 @@ a:hover {
   font-weight: 600;
 }
 .social-links a:hover {
-  color: var(--accent-purple);
+  color: var(--accent-red);
 }
 
 /* Gallery Styles */
@@ -359,7 +359,7 @@ a:hover {
 }
 .gallery-title {
   font-size: 2rem;
-  color: var(--accent-cyan);
+  color: var(--accent-gold);
   border-bottom: 2px solid var(--border-glass);
   padding-bottom: 0.5rem;
   margin-bottom: 2rem;
@@ -383,7 +383,7 @@ a:hover {
 }
 .media-item:hover {
   transform: scale(1.02);
-  box-shadow: 0 8px 25px rgba(0, 242, 254, 0.4);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
   z-index: 10;
   position: relative;
 }
@@ -426,7 +426,7 @@ a:hover {
   max-height: 90vh;
   object-fit: contain;
   border-radius: 8px;
-  box-shadow: 0 0 30px rgba(0, 242, 254, 0.3);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
   animation: zoomIn 0.3s ease;
 }
 .lightbox-close {
@@ -441,7 +441,7 @@ a:hover {
   z-index: 2001;
 }
 .lightbox-close:hover {
-  color: var(--accent-cyan);
+  color: var(--accent-gold);
 }
 
 .lightbox-prev, .lightbox-next {
@@ -469,7 +469,7 @@ a:hover {
 }
 
 .lightbox-prev:hover, .lightbox-next:hover {
-  color: var(--accent-cyan);
+  color: var(--accent-gold);
 }
 
 @keyframes zoomIn {
