@@ -22,9 +22,13 @@
             {% for file in sorted_files %}
                 {% if count < 3 %}
                     {% if file.extname == '.jpg' or file.extname == '.png' or file.extname == '.webp' %}
+                        {% assign parts = file.path | split: "/" %}
+                        {% assign category = parts[3] %}
                         <div class="media-item-container">
-                            <img class="media-item" src="{{ file.path | relative_url }}" alt="New Model">
-                            <div class="media-label">Recently Added</div>
+                            <a href="{{ '/en/' | append: category | append: '.html' | relative_url }}" style="text-decoration: none;">
+                                <img class="media-item" src="{{ file.path | relative_url }}" alt="New Model">
+                                <div class="media-label">{{ ui.nav[category] | default: "Recently Added" }}</div>
+                            </a>
                         </div>
                         {% assign count = count | plus: 1 %}
                     {% endif %}
