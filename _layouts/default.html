@@ -25,6 +25,7 @@
             </a>
             <nav>
                 {% comment %} Home link removed as logo already points home {% endcomment %}
+                <a href="{{ '/news.html' | relative_url }}">{{ ui.nav.news }}</a>
 
                 <div class="nav-dropdown">
                     <a href="javascript:void(0)" class="dropbtn">{{ ui.nav.models_category }}</a>

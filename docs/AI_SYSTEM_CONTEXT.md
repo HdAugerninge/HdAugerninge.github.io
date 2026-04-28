@@ -48,3 +48,9 @@ The workflow for adding new content starts when a new file (image, video, or GIF
 3. **Naming**:
     - **Alt Tags**: Provide descriptive `alt` attributes for all images/GIFs (e.g., `alt="Gloomsworn Detail"`).
     - **Section Headers**: If a new Layer 2 folder is created, add a corresponding `<h3 class="gallery-title">` section to the HTML.
+
+## Automated News Logic
+The "Neuigkeiten" (News) page uses a Liquid filter to automatically display the latest 3 images added to the repository.
+- **Detection**: It scans `site.static_files` for paths containing `/resources/models/` and sorts them by `modified_time` in reverse order.
+- **Update Trigger**: Whenever a new image is added to the `resources/models/` directory, Jekyll will automatically include it in the "Recent Models" section upon the next build.
+- **Bilingual Maintenance**: Both `_includes/news_de.html` and `_includes/news_en.html` share this logic. No manual update of the news feed is required when adding models.
