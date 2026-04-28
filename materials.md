@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Farben und Material
+title: Farben & Material
 lang: de
 ---
 
