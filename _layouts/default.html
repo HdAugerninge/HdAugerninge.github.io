@@ -25,7 +25,11 @@
             </a>
             <nav>
                 {% comment %} Home link removed as logo already points home {% endcomment %}
+                {% if lang == 'en' %}
+                <a href="{{ '/en/news.html' | relative_url }}">{{ ui.nav.news }}</a>
+                {% else %}
                 <a href="{{ '/news.html' | relative_url }}">{{ ui.nav.news }}</a>
+                {% endif %}
 
                 <div class="nav-dropdown">
                     <a href="javascript:void(0)" class="dropbtn">{{ ui.nav.models_category }}</a>
