@@ -21,18 +21,40 @@
 
             {% assign count = 0 %}
             {% for file in sorted_files %}
-            {% if count < 3 %} {% if file.extname=='.jpg' or file.extname=='.png' or file.extname=='.webp' %} {% assign
-                parts=file.path | split: "/" %} {% assign category=parts[3] %} <div class="media-item-container">
-                <a href="{{ '/' | append: category | append: '.html' | relative_url }}" style="text-decoration: none;">
-                    <img class="media-item" src="{{ file.path | relative_url }}" alt="Neues Modell">
-                    <div class="media-label">{{ ui.nav[category] | default: "Neu hinzugefügt" }}</div>
-                </a>
-        </div>
-        {% assign count = count | plus: 1 %}
-        {% endif %}
-        {% endif %}
-        {% endfor %}
-    </div>
-</div>
+                {% if count < 3 %}
+                    {% if file.extname == '.jpg' or file.extname == '.png' or file.extname == '.webp' %}
+                        {% assign parts = file.path | split: "/" %}
+                        {% assign category = "" %}
+                        {% assign found_models = false %}
+                        {% for part in parts %}
+                            {% if found_models and category == "" %}
+                                {% assign category = part %}
+                            {% endif %}
+                            {% if part == "models" %}
+                                {% assign found_models = true %}
+                            {% endif %}
+                        {% endfor %}
 
+                        <div class="media-item-container">
+                            {% if category != "" %}
+                            <a href="{{ '/' | append: category | append: '.html' | relative_url }}" style="text-decoration: none;">
+                                <img class="media-item" src="{{ file.path | relative_url }}" alt="Neues Modell">
+                                <div class="media-label">{{ ui.nav[category] | default: "Neu hinzugefügt" }}</div>
+                            </a>
+                            {% else %}
+                            <img class="media-item" src="{{ file.path | relative_url }}" alt="Neues Modell">
+                            <div class="media-label">Neu hinzugefügt</div>
+                            {% endif %}
+                        </div>
+                        {% assign count = count | plus: 1 %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 4rem;">
+        <p>Möchtest du mehr sehen? Entdecke unsere vollständigen Kategorien im Menü!</p>
+        <a href="{{ '/dragons.html' | relative_url }}" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Alle Modelle ansehen</a>
+    </div>
 </div>
