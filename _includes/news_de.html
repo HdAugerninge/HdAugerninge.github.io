@@ -35,11 +35,17 @@
                             {% endif %}
                         {% endfor %}
 
+                        {% comment %} Map folder names to page names if they differ {% endcomment %}
+                        {% assign category_page = category %}
+                        {% if category == "rest" %}
+                            {% assign category_page = "practical" %}
+                        {% endif %}
+
                         <div class="media-item-container">
                             {% if category != "" %}
-                            <a href="{{ '/' | append: category | append: '.html' | relative_url }}" style="text-decoration: none;">
+                            <a href="{{ '/' | append: category_page | append: '.html' | relative_url }}" style="text-decoration: none;">
                                 <img class="media-item" src="{{ file.path | relative_url }}" alt="Neues Modell">
-                                <div class="media-label">{{ ui.nav[category] | default: "Neu hinzugefügt" }}</div>
+                                <div class="media-label">{{ ui.nav[category_page] | default: "Neu hinzugefügt" }}</div>
                             </a>
                             {% else %}
                             <img class="media-item" src="{{ file.path | relative_url }}" alt="Neues Modell">
