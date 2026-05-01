@@ -1,5 +1,5 @@
 <div class="hero subpage-hero">
-    <div class="hero-bg" style="background-image: url('/resources/materials/overview1.jpg');"></div>
+    <div class="hero-bg" style="background-image: url('/resources/materials/overview1.webp');"></div>
     <div class="hero-content">
         <h1>News</h1>
         <p>Stay up to date with my latest 3D-printed creations.</p>
@@ -21,7 +21,7 @@
             {% assign count = 0 %}
             {% for file in sorted_files %}
                 {% if count < 3 %}
-                    {% if file.extname == '.jpg' or file.extname == '.png' or file.extname == '.webp' %}
+                    {% if file.extname == '.webp' or file.extname == '.mp4' %}
                         {% assign parts = file.path | split: "/" %}
                         {% assign category = "" %}
                         {% assign found_models = false %}
@@ -43,11 +43,11 @@
                         <div class="media-item-container">
                             {% if category != "" %}
                             <a href="{{ '/en/' | append: category_page | append: '.html' | relative_url }}" style="text-decoration: none;">
-                                <img class="media-item" src="{{ file.path | relative_url }}" alt="New Model">
+                                <img loading="lazy" decoding="async" class="media-item" src="{{ file.path | relative_url }}" alt="New Model">
                                 <div class="media-label">{{ ui.nav[category_page] | default: "Recently Added" }}</div>
                             </a>
                             {% else %}
-                            <img class="media-item" src="{{ file.path | relative_url }}" alt="New Model">
+                            <img loading="lazy" decoding="async" class="media-item" src="{{ file.path | relative_url }}" alt="New Model">
                             <div class="media-label">Recently Added</div>
                             {% endif %}
                         </div>
