@@ -43,7 +43,10 @@ The workflow for adding new content starts when a new file (image, video, or GIF
     - **Media Tags**: 
         - **Images/GIFs**: Use `<img class="media-item">`.
         - **Videos**: Use `<video class="media-item media-video" autoplay loop muted playsinline>`.
+        - **Descriptions**: For models, wrap the media item in a `<div class="media-item-container">` and add a `<div class="media-description">` below.
+        - **Material Links**: Use IDs on the materials page (format: `mat-pla-lila`, `mat-silk-blau`, etc.) to link directly to a specific filament from a model description.
     - **Bilingual Sync**: Always apply changes to both German and English versions.
+
 
 3. **Naming**:
     - **Alt Tags**: Provide descriptive `alt` attributes for all images/GIFs (e.g., `alt="Gloomsworn Detail"`).
