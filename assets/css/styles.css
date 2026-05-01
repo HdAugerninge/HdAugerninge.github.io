@@ -383,6 +383,16 @@ a:hover {
   margin-bottom: 2rem;
   text-transform: uppercase;
   letter-spacing: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.price-tag {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  letter-spacing: 0;
+  text-transform: none;
 }
 .media-grid {
   display: grid;
