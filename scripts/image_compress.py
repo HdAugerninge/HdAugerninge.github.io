@@ -1,5 +1,5 @@
 import os
-from PIL import Image
+from PIL import Image, ImageOps
 
 def optimize_images(root_dir, max_size=(1280, 1280), quality=80):
     for subdir, dirs, files in os.walk(root_dir):
@@ -8,14 +8,13 @@ def optimize_images(root_dir, max_size=(1280, 1280), quality=80):
                 file_path = os.path.join(subdir, file)
                 webp_path = os.path.splitext(file_path)[0] + '.webp'
                 
-                # Skip if webp already exists and is newer than source
-                if os.path.exists(webp_path) and os.path.getmtime(webp_path) > os.path.getmtime(file_path):
-                    print(f"Skipping {file} (WebP already exists)")
-                    continue
-                
+                # Force re-processing to fix rotation issues
                 try:
                     with Image.open(file_path) as img:
-                        # Convert to RGB if necessary (e.g. for RGBA PNGs)
+                        # Fix orientation based on EXIF data
+                        img = ImageOps.exif_transpose(img)
+                        
+                        # Convert to RGB if necessary
                         if img.mode in ('RGBA', 'P'):
                             img = img.convert('RGB')
                         
