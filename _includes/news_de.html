@@ -20,39 +20,61 @@
             {% assign sorted_files = all_files | sort: "modified_time" | reverse %}
 
             {% assign count = 0 %}
+            {% assign shown_sections = "" %}
             {% for file in sorted_files %}
                 {% if count < 3 %}
                     {% if file.extname == '.webp' or file.extname == '.mp4' %}
                         {% assign parts = file.path | split: "/" %}
                         {% assign category = "" %}
+                        {% assign model_name = "" %}
                         {% assign found_models = false %}
+                        
                         {% for part in parts %}
-                            {% if found_models and category == "" %}
-                                {% assign category = part %}
+                            {% if found_models %}
+                                {% if category == "" %}
+                                    {% assign category = part %}
+                                {% elsif part contains "." == false %}
+                                    {% assign model_name = part | downcase | replace: " ", "" %}
+                                {% endif %}
                             {% endif %}
                             {% if part == "models" %}
                                 {% assign found_models = true %}
                             {% endif %}
                         {% endfor %}
 
-                        {% comment %} Map folder names to page names if they differ {% endcomment %}
-                        {% assign category_page = category %}
-                        {% if category == "rest" %}
-                            {% assign category_page = "allerlei" %}
-                        {% endif %}
+                        {% assign section_key = category | append: "-" | append: model_name | append: "," %}
+                        {% unless shown_sections contains section_key %}
+                            {% assign shown_sections = shown_sections | append: section_key %}
 
-                        <div class="media-item-container">
-                            {% if category != "" %}
-                            <a href="{{ '/' | append: category_page | append: '.html' | relative_url }}" style="text-decoration: none;">
-                                <img loading="lazy" decoding="async" class="media-item" src="{{ file.path | relative_url }}" alt="Neues Modell">
-                                <div class="media-label">{{ ui.nav[category_page] | default: "Neu hinzugefügt" }}</div>
-                            </a>
-                            {% else %}
-                            <img loading="lazy" decoding="async" class="media-item" src="{{ file.path | relative_url }}" alt="Neues Modell">
-                            <div class="media-label">Neu hinzugefügt</div>
+                            {% comment %} Map folder names to page names if they differ {% endcomment %}
+                            {% assign category_page = category %}
+                            {% if category == "rest" %}
+                                {% assign category_page = "allerlei" %}
                             {% endif %}
-                        </div>
-                        {% assign count = count | plus: 1 %}
+
+                            {% assign href = '/' | append: category_page | append: '.html' %}
+                            {% if model_name != "" %}
+                                {% assign href = href | append: '#' | append: model_name %}
+                            {% endif %}
+
+                            <div class="media-item-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                                {% if file.extname == '.mp4' %}
+                                <video class="media-item media-video" autoplay loop muted playsinline>
+                                    <source src="{{ file.path | relative_url }}" type="video/mp4">
+                                </video>
+                                {% else %}
+                                <img loading="lazy" decoding="async" class="media-item" src="{{ file.path | relative_url }}" alt="Neues Modell">
+                                {% endif %}
+                                
+                                {% if category != "" %}
+                                    <div class="media-label" style="margin-bottom: 0;">{{ ui.nav[category_page] | default: "Neu hinzugefügt" }}</div>
+                                    <a href="{{ href | relative_url }}" class="jump-link" style="color: var(--accent-color); font-size: 0.9rem; text-decoration: underline;">{{ ui.nav.jump_to_page | default: "Zur Seite springen" }}</a>
+                                {% else %}
+                                    <div class="media-label">Neu hinzugefügt</div>
+                                {% endif %}
+                            </div>
+                            {% assign count = count | plus: 1 %}
+                        {% endunless %}
                     {% endif %}
                 {% endif %}
             {% endfor %}
