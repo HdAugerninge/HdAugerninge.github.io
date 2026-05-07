@@ -374,6 +374,7 @@ a:hover {
 .gallery-section {
   margin-top: 3rem;
   margin-bottom: 5rem;
+  scroll-margin-top: 100px;
 }
 .gallery-title {
   font-size: 2rem;
@@ -408,6 +409,7 @@ a:hover {
   border: 1px solid var(--border-glass);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background: var(--bg-glass);
+  scroll-margin-top: 100px;
 }
 .media-item:hover {
   transform: scale(1.02);
