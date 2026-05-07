@@ -13,7 +13,7 @@
     </p>
 
     <div class="gallery-section">
-        <div class="media-grid">
+        <div class="media-grid" style="align-items: center;">
             {% comment %} Safely filter and sort images {% endcomment %}
             {% assign all_files = site.static_files | where_exp: "item", "item.path contains '/resources/models/'" %}
             {% assign sorted_files = all_files | sort: "modified_time" | reverse %}
@@ -82,6 +82,6 @@
 
     <div style="text-align: center; margin-top: 4rem;">
         <p>Want to see more? Explore our full categories in the menu!</p>
-        <a href="{{ '/en/dragons.html' | relative_url }}" class="btn-primary" style="display: inline-block; margin-top: 1rem;">View All Models</a>
+        <a href="{{ '/en/models.html' | relative_url }}" class="btn-primary" style="display: inline-block; margin-top: 1rem;">View All Models</a>
     </div>
 </div>

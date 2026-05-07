@@ -35,7 +35,7 @@
                 {% endif %}
 
                 <div class="nav-dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">{{ ui.nav.models_category }}</a>
+                    <a href="{{ '/models.html' | prepend: url_prefix | relative_url }}" class="dropbtn">{{ ui.nav.models_category }}</a>
                     <div class="dropdown-content">
                         <a href="{{ '/dragons.html' | prepend: url_prefix | relative_url }}">{{ ui.nav.dragons }}</a>
                         <a href="{{ '/figures.html' | prepend: url_prefix | relative_url }}">{{ ui.nav.figures }}</a>
