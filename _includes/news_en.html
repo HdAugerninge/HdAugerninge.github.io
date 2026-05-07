@@ -2,6 +2,7 @@
     <div class="hero-bg" style="background-image: url('/resources/materials/overview1.webp');"></div>
     <div class="hero-content">
         <h1>News</h1>
+        <h2 style="color: var(--text-secondary);">Note: This page is currently under construction.</h2>
         <p>Stay up to date with my latest 3D-printed creations.</p>
     </div>
 </div>
@@ -21,67 +22,48 @@
             {% assign count = 0 %}
             {% assign shown_sections = "" %}
             {% for file in sorted_files %}
-                {% if count < 3 %}
-                    {% if file.extname == '.webp' or file.extname == '.mp4' %}
-                        {% assign parts = file.path | split: "/" %}
-                        {% assign category = "" %}
-                        {% assign model_name = "" %}
-                        {% assign found_models = false %}
-                        
-                        {% for part in parts %}
-                            {% if found_models %}
-                                {% if category == "" %}
-                                    {% assign category = part %}
-                                {% elsif part contains "." == false %}
-                                    {% assign model_name = part | downcase | replace: " ", "" %}
-                                {% endif %}
-                            {% endif %}
-                            {% if part == "models" %}
-                                {% assign found_models = true %}
-                            {% endif %}
-                        {% endfor %}
-
-                        {% assign section_key = category | append: "-" | append: model_name | append: "," %}
-                        {% unless shown_sections contains section_key %}
-                            {% assign shown_sections = shown_sections | append: section_key %}
-
-                            {% comment %} Map folder names to page names if they differ {% endcomment %}
-                            {% assign category_page = category %}
-                            {% if category == "rest" %}
-                                {% assign category_page = "allerlei" %}
-                            {% endif %}
-
-                            {% assign href = '/en/' | append: category_page | append: '.html' %}
-                            {% if model_name != "" %}
-                                {% assign href = href | append: '#' | append: model_name %}
-                            {% endif %}
-
-                            <div class="media-item-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
-                                {% if file.extname == '.mp4' %}
-                                <video class="media-item media-video" autoplay loop muted playsinline>
-                                    <source src="{{ file.path | relative_url }}" type="video/mp4">
-                                </video>
-                                {% else %}
-                                <img loading="lazy" decoding="async" class="media-item" src="{{ file.path | relative_url }}" alt="New Model">
-                                {% endif %}
-                                
-                                {% if category != "" %}
-                                    <div class="media-label" style="margin-bottom: 0;">{{ ui.nav[category_page] | default: "Recently Added" }}</div>
-                                    <a href="{{ href | relative_url }}" class="jump-link" style="color: var(--accent-color); font-size: 0.9rem; text-decoration: underline;">{{ ui.nav.jump_to_page | default: "Jump to page" }}</a>
-                                {% else %}
-                                    <div class="media-label">Recently Added</div>
-                                {% endif %}
-                            </div>
-                            {% assign count = count | plus: 1 %}
-                        {% endunless %}
-                    {% endif %}
+            {% if count < 3 %} {% if file.extname=='.webp' or file.extname=='.mp4' %} {% assign parts=file.path |
+                split: "/" %} {% assign category="" %} {% assign model_name="" %} {% assign found_models=false %} {% for
+                part in parts %} {% if found_models %} {% if category=="" %} {% assign category=part %} {% elsif part
+                contains "."==false %} {% assign model_name=part | downcase | replace: " " , "" %} {% endif %} {% endif
+                %} {% if part=="models" %} {% assign found_models=true %} {% endif %} {% endfor %} {% assign
+                section_key=category | append: "-" | append: model_name | append: "," %} {% unless shown_sections
+                contains section_key %} {% assign shown_sections=shown_sections | append: section_key %} {% comment %}
+                Map folder names to page names if they differ {% endcomment %} {% assign category_page=category %} {% if
+                category=="rest" %} {% assign category_page="allerlei" %} {% endif %} {% assign href='/en/' | append:
+                category_page | append: '.html' %} {% if model_name !="" %} {% assign href=href | append: '#' | append:
+                model_name %} {% endif %} <div class="media-item-container"
+                style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                {% if file.extname == '.mp4' %}
+                <video class="media-item media-video" autoplay loop muted playsinline>
+                    <source src="{{ file.path | relative_url }}" type="video/mp4">
+                </video>
+                {% else %}
+                <img loading="lazy" decoding="async" class="media-item" src="{{ file.path | relative_url }}"
+                    alt="New Model">
                 {% endif %}
-            {% endfor %}
-        </div>
-    </div>
 
-    <div style="text-align: center; margin-top: 4rem;">
-        <p>Want to see more? Explore our full categories in the menu!</p>
-        <a href="{{ '/en/models.html' | relative_url }}" class="btn-primary" style="display: inline-block; margin-top: 1rem;">View All Models</a>
+                {% if category != "" %}
+                <div class="media-label" style="margin-bottom: 0;">{{ ui.nav[category_page] | default: "Recently Added"
+                    }}</div>
+                <a href="{{ href | relative_url }}" class="jump-link"
+                    style="color: var(--accent-color); font-size: 0.9rem; text-decoration: underline;">{{
+                    ui.nav.jump_to_page | default: "Jump to page" }}</a>
+                {% else %}
+                <div class="media-label">Recently Added</div>
+                {% endif %}
+        </div>
+        {% assign count = count | plus: 1 %}
+        {% endunless %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
     </div>
+</div>
+
+<div style="text-align: center; margin-top: 4rem;">
+    <p>Want to see more? Explore our full categories in the menu!</p>
+    <a href="{{ '/en/models.html' | relative_url }}" class="btn-primary"
+        style="display: inline-block; margin-top: 1rem;">View All Models</a>
+</div>
 </div>
