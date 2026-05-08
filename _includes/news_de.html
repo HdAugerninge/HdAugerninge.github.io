@@ -25,8 +25,9 @@
             {% for file in sorted_files %}
             {% if count < 3 %} {% if file.extname=='.webp' or file.extname=='.mp4' %} {% assign parts=file.path |
                 split: "/" %} {% assign category="" %} {% assign model_name="" %} {% assign found_models=false %} {% for
-                part in parts %} {% if found_models %} {% if category=="" %} {% assign category=part %} {% elsif part
-                contains "."==false %} {% assign model_name=part | downcase | replace: " " , "" %} {% endif %} {% endif
+                part in parts %} {% if found_models %} {% if category=="" %} {% assign category=part %} {% elsif part contains "." %}
+                {% comment %} This is a filename, skip {% endcomment %}
+                {% else %} {% assign model_name=part | downcase | replace: " " , "" %} {% endif %} {% endif
                 %} {% if part=="models" %} {% assign found_models=true %} {% endif %} {% endfor %} {% assign
                 section_key=category | append: "-" | append: model_name | append: "," %} {% unless shown_sections
                 contains section_key %} {% assign shown_sections=shown_sections | append: section_key %} {% comment %}
