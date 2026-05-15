@@ -33,7 +33,8 @@ body {
   z-index: 1001;
   opacity: 0.5;
   transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none; /* Allows clicks to pass through if it overlaps something */
+  pointer-events: none;
+  /* Allows clicks to pass through if it overlaps something */
 }
 
 .fixed-logo-badge img {
@@ -59,7 +60,9 @@ body {
 }
 
 /* Typography elements */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin-bottom: 1rem;
   font-weight: 800;
   line-height: 1.2;
@@ -156,7 +159,7 @@ a:hover {
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   min-width: 200px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
   border: 1px solid var(--border-glass);
   border-radius: 12px;
   z-index: 1001;
@@ -231,10 +234,12 @@ a:hover {
   background-image: url('/resources/drucker_setup.webp');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* parallax effect */
+  background-attachment: fixed;
+  /* parallax effect */
   opacity: 0.3;
   z-index: 0;
 }
+
 .hero-bg::after {
   content: '';
   position: absolute;
@@ -317,7 +322,8 @@ a:hover {
   color: var(--text-secondary);
 }
 
-.form-group input, .form-group textarea {
+.form-group input,
+.form-group textarea {
   width: 100%;
   padding: 0.8rem;
   background: rgba(0, 0, 0, 0.3);
@@ -327,7 +333,8 @@ a:hover {
   font-family: inherit;
 }
 
-.form-group input:focus, .form-group textarea:focus {
+.form-group input:focus,
+.form-group textarea:focus {
   outline: none;
   border-color: var(--accent-gold);
 }
@@ -346,7 +353,7 @@ a:hover {
   border-top: 1px solid var(--border-glass);
   padding: 3rem 0;
   margin-top: 5rem;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .footer-container {
@@ -366,6 +373,7 @@ a:hover {
   color: var(--text-secondary);
   font-weight: 600;
 }
+
 .social-links a:hover {
   color: var(--accent-red);
 }
@@ -376,6 +384,7 @@ a:hover {
   margin-bottom: 5rem;
   scroll-margin-top: 100px;
 }
+
 .gallery-title {
   font-size: 2rem;
   color: var(--accent-gold);
@@ -395,12 +404,14 @@ a:hover {
   letter-spacing: 0;
   text-transform: none;
 }
+
 .media-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
   grid-auto-flow: dense;
 }
+
 .media-item {
   width: 100%;
   height: 250px;
@@ -411,12 +422,14 @@ a:hover {
   background: var(--bg-glass);
   scroll-margin-top: 100px;
 }
+
 .media-item:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
   z-index: 10;
   position: relative;
 }
+
 .media-video {
   grid-column: span 2;
   grid-row: span 2;
@@ -465,8 +478,15 @@ a:hover {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .hero-content h1 { font-size: 2.5rem; }
-  .glass-nav nav { display: none; /* simple mobile nav override needed in future */ }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .glass-nav nav {
+    display: none;
+    /* simple mobile nav override needed in future */
+  }
+
   .media-video {
     grid-column: span 1;
     grid-row: span 1;
@@ -489,6 +509,7 @@ a:hover {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }
+
 .lightbox-content {
   max-width: 90%;
   max-height: 90vh;
@@ -497,6 +518,7 @@ a:hover {
   box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
   animation: zoomIn 0.3s ease;
 }
+
 .lightbox-close {
   position: absolute;
   top: 20px;
@@ -508,11 +530,13 @@ a:hover {
   transition: 0.3s;
   z-index: 2001;
 }
+
 .lightbox-close:hover {
   color: var(--accent-gold);
 }
 
-.lightbox-prev, .lightbox-next {
+.lightbox-prev,
+.lightbox-next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -536,11 +560,19 @@ a:hover {
   left: 20px;
 }
 
-.lightbox-prev:hover, .lightbox-next:hover {
+.lightbox-prev:hover,
+.lightbox-next:hover {
   color: var(--accent-gold);
 }
 
 @keyframes zoomIn {
-  from {transform: scale(0.8); opacity: 0;}
-  to {transform: scale(1); opacity: 1;}
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
