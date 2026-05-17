@@ -7,6 +7,13 @@
   --accent-red: #d40000;
   --card-bg: rgba(25, 15, 15, 0.7);
   --border-glass: rgba(255, 215, 0, 0.15);
+  
+  /* Filament Colors */
+  --color-light-brown: #b7926e;
+  --color-dark-brown: #5c4033;
+  --color-black: #000000;
+  --color-orange: #ffa500;
+  --color-green: #2e7d32;
 }
 
 * {
