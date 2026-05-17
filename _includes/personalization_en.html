@@ -12,68 +12,240 @@
         perfectly in your home or as a gift.
     </p>
 
+    <!-- Overview Grid (Summary) -->
     <div class="grid">
-        <!-- 1. Scaling -->
-        <div class="card">
-            <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem;">
-                <img src="/resources/personalization/scaling_capy_front.webp" alt="Scaling Example Front"
-                    style="width: 50%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid var(--border-glass);">
-                <img src="/resources/personalization/scaling_capy_side.webp" alt="Scaling Example Side"
-                    style="width: 50%; height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid var(--border-glass);">
+        <!-- 1. Scaling Card -->
+        <div class="card" style="justify-content: space-between;">
+            <div>
+                <h3 style="display: flex; align-items: center; gap: 10px;">
+                    <span>📐</span> 1. Sizes & Scaling
+                </h3>
+                <p>
+                    Whether tiny for a display case or impressively large for a shelf – almost every model can be flexibly scaled.
+                </p>
+                <ul style="margin-top: 1.5rem; color: var(--text-secondary); list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li>✅ Centimeter-precise resizing</li>
+                    <li>✅ Proportional scaling</li>
+                    <li>✅ Perfect adaptation to your space</li>
+                </ul>
             </div>
-            <h3>1. Scaling</h3>
-            <p>
-                Whether tiny for a display case or impressively large for a shelf – almost every model can be adjusted
-                in size.
-            </p>
-            <ul style="margin-top: 1rem; color: var(--text-secondary); list-style: none; padding-left: 0;">
-                <li>✅ Centimeter-precise resizing</li>
-                <li>✅ Proportional scaling</li>
-                <li>✅ Adaptation to existing spaces</li>
-            </ul>
+            <a href="#detail-scaling" class="btn-primary" style="display: inline-block; font-size: 0.8rem; margin-top: 2rem; text-align: center;">Details & Examples</a>
         </div>
 
-        <!-- 2. Color Selection -->
-        <div class="card">
-            <img src="/resources/materials/pla_silk/silk_lila_blau_schwarz.webp" alt="Color Selection"
-                style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem; border: 1px solid var(--border-glass);">
-            <h3>2. Color Selection</h3>
-            <p>
-                Choose from over 50 different colors and materials. From elegant matte black to magic color-change
-                filaments.
-            </p>
-            <ul style="margin-top: 1rem; color: var(--text-secondary); list-style: none; padding-left: 0;">
-                <li>✅ Huge color selection</li>
-                <li>✅ Various materials (PLA, Silk, PETG)</li>
-                <li>✅ Multi-color prints possible</li>
-            </ul>
-            <br>
-            <a href="{{ '/en/materials.html' | relative_url }}" class="btn-primary"
-                style="display: inline-block; font-size: 0.8rem;">View Materials</a>
+        <!-- 2. Color Selection Card -->
+        <div class="card" style="justify-content: space-between;">
+            <div>
+                <h3 style="display: flex; align-items: center; gap: 10px;">
+                    <span>🎨</span> 2. Color Selection
+                </h3>
+                <p>
+                    Choose from over 50 different colors and materials. From elegant matte tones to shiny color-change effects.
+                </p>
+                <ul style="margin-top: 1.5rem; color: var(--text-secondary); list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li>✅ Huge color selection</li>
+                    <li>✅ Various materials (PLA, Silk, PETG)</li>
+                    <li>✅ Multi-color prints (up to 4 colors)</li>
+                </ul>
+            </div>
+            <a href="#detail-colors" class="btn-primary" style="display: inline-block; font-size: 0.8rem; margin-top: 2rem; text-align: center;">Compare Colors</a>
         </div>
 
-        <!-- 3. Labeling -->
-        <div class="card">
-            <img src="/resources/personalization/labeling.webp" alt="Labeling Example"
-                style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1.5rem; border: 1px solid var(--border-glass);">
-            <h3>3. Labeling</h3>
-
-            <p>
-                Give your model a personal touch with embedded names, dates, or dedications.
-            </p>
-            <ul style="margin-top: 1rem; color: var(--text-secondary); list-style: none; padding-left: 0;">
-                <li>✅ Embed names & texts</li>
-                <li>✅ Various fonts</li>
-                <li>✅ Ideal for gifts & special occasions</li>
-            </ul>
+        <!-- 3. Labeling Card -->
+        <div class="card" style="justify-content: space-between;">
+            <div>
+                <h3 style="display: flex; align-items: center; gap: 10px;">
+                    <span>✍️</span> 3. Custom Engraving
+                </h3>
+                <p>
+                    Give your model a personal touch with embedded names, important dates, or dedications.
+                </p>
+                <ul style="margin-top: 1.5rem; color: var(--text-secondary); list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li>✅ Embed names & texts in 3D</li>
+                    <li>✅ Select from various fonts</li>
+                    <li>✅ Ideal for gifts & special occasions</li>
+                </ul>
+            </div>
+            <a href="#detail-labeling" class="btn-primary" style="display: inline-block; font-size: 0.8rem; margin-top: 2rem; text-align: center;">View Details</a>
         </div>
     </div>
 
+    <!-- DETAIL SECTIONS -->
+
+    <!-- Section 1: Scaling Details -->
+    <div id="detail-scaling" class="detail-section">
+        <h2>1. Sizes & Scaling</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 800px;">
+            Thanks to modern 3D printing, we are not bound to fixed dimensions. Almost every model can be scaled to your exact desired size – whether as a miniature for a display case or a masterpiece for your shelf.
+        </p>
+        <div class="showcase-split">
+            <div style="display: flex; gap: 1rem; width: 100%;">
+                <div class="showcase-img-container" style="width: 50%; height: auto; background: none;">
+                    <img src="/resources/personalization/scaling_capy_front.webp" alt="Model Size Comparison Front" class="showcase-img" style="object-fit: contain; height: auto; max-height: 450px;">
+                </div>
+                <div class="showcase-img-container" style="width: 50%; height: auto; background: none;">
+                    <img src="/resources/personalization/scaling_capy_side.webp" alt="Model Size Comparison Side" class="showcase-img" style="object-fit: contain; height: auto; max-height: 450px;">
+                </div>
+            </div>
+            <div>
+                <h3 style="color: var(--accent-gold); font-size: 1.5rem;">Centimeter-Precise Flexibility</h3>
+                <p style="margin-bottom: 1.5rem;">
+                    By default, our resizing is proportional to perfectly preserve the model's design. Upon request, non-proportional scaling is also possible (e.g., for custom inserts or brackets).
+                </p>
+                <ul style="color: var(--text-secondary); list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.8rem;">
+                    <li>📐 <strong>Wide Range:</strong> From tiny models (e.g., 2 cm height) up to impressive 25 cm prints in a single piece.</li>
+                    <li>🔍 <strong>High Detail Fidelity:</strong> Even with highly downscaled prints, the fine details of the design are brilliantly preserved.</li>
+                    <li>🏠 <strong>Perfect Fit:</strong> Ideal to customize models for specific shelf compartments, shadow boxes, or existing spaces.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Color Details -->
+    <div id="detail-colors" class="detail-section">
+        <h2>2. Color Selection & Material Effects</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 800px;">
+            Colors completely transform the look and feel of a model. Choose between classic matte filaments, silky shiny Silk variants, or spectacular multi-color prints.
+        </p>
+
+        <!-- A. Single Color Prints Showcase -->
+        <h3 style="margin-top: 3rem; color: var(--text-primary); border-left: 3px solid var(--accent-gold); padding-left: 12px; font-size: 1.6rem;">Single-Color Prints</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+            See for yourself how a single model completely changes its character through different colors and material structures:
+        </p>
+        <div class="showcase-split" style="margin-bottom: 4rem;">
+            <div class="showcase-img-container">
+                <span id="single-badge" class="filament-badge">Classic Matte (Green)</span>
+                <img id="single-showcase-img" src="/resources/personalization/single_color_1.webp" alt="Single Color Print Comparison" class="showcase-img">
+            </div>
+            <div>
+                <h4 style="color: var(--accent-gold); margin-bottom: 1rem;">Choose a Material / Color:</h4>
+                <div class="swatch-list">
+                    <button class="swatch-item active" onclick="switchSingleColor(this, 'Classic Matte (Green)', '/resources/personalization/single_color_1.webp')">
+                        <div class="swatch-color" style="background-color: #657153;"></div>
+                        <div class="swatch-info">
+                            <span class="swatch-name">Classic Matte Green</span>
+                            <span class="swatch-desc">Simple, elegant matte finish with no reflections.</span>
+                        </div>
+                    </button>
+                    <button class="swatch-item" onclick="switchSingleColor(this, 'Shiny Gold (Silk)', '/resources/personalization/single_color_2.webp')">
+                        <div class="swatch-color" style="background: linear-gradient(135deg, #ffd700, #b8860b);"></div>
+                        <div class="swatch-info">
+                            <span class="swatch-name">Silk Gold</span>
+                            <span class="swatch-desc">High-gloss, silky metallic look with wonderful light play.</span>
+                        </div>
+                    </button>
+                    <button class="swatch-item" onclick="switchSingleColor(this, 'Silk Magic (Purple/Blue)', '/resources/personalization/single_color_3.webp')">
+                        <div class="swatch-color" style="background: linear-gradient(135deg, #8a2be2, #4b0082);"></div>
+                        <div class="swatch-info">
+                            <span class="swatch-name">Silk Magic Purple/Blue</span>
+                            <span class="swatch-desc">Dual-color filament – shines differently depending on the angle.</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- B. Multicolor Prints Showcase -->
+        <h3 style="color: var(--text-primary); border-left: 3px solid var(--accent-gold); padding-left: 12px; font-size: 1.6rem;">Multi-Color Prints (up to 4 colors)</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+            Using an automatic material system (AMS), we can produce models with up to 4 different colors in a single print. Here is the same model in two different color schemes:
+        </p>
+        <div class="showcase-split">
+            <div class="showcase-img-container">
+                <span id="multi-badge" class="filament-badge">Color Scheme A</span>
+                <img id="multi-showcase-img" src="/resources/personalization/multicolor_1.webp" alt="Multi-Color Print Comparison" class="showcase-img">
+            </div>
+            <div>
+                <h4 style="color: var(--accent-gold); margin-bottom: 1rem;">Choose a Color Scheme:</h4>
+                <div class="swatch-list">
+                    <button class="swatch-item active" onclick="switchMulticolor(this, 'Color Scheme A', '/resources/personalization/multicolor_1.webp')">
+                        <div class="swatch-color" style="background: linear-gradient(135deg, #2e8b57, #ffffff, #000000, #ffa500);"></div>
+                        <div class="swatch-info">
+                            <span class="swatch-name">Color Scheme A</span>
+                            <span class="swatch-desc">Natural, high-contrast coloring for a lifelike appearance.</span>
+                        </div>
+                    </button>
+                    <button class="swatch-item" onclick="switchMulticolor(this, 'Color Scheme B', '/resources/personalization/multicolor_2.webp')">
+                        <div class="swatch-color" style="background: linear-gradient(135deg, #da70d6, #ffffff, #000000, #ffa500);"></div>
+                        <div class="swatch-info">
+                            <span class="swatch-name">Color Scheme B</span>
+                            <span class="swatch-desc">Imaginative, vibrant color mix for a magical look.</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 4rem;">
+            <a href="{{ '/en/materials.html' | relative_url }}" class="btn-primary">View all 50+ Colors & Materials</a>
+        </div>
+    </div>
+
+    <!-- Section 3: Labeling Details -->
+    <div id="detail-labeling" class="detail-section">
+        <h2>3. Custom Engraving & Inscriptions</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 800px;">
+            A name, an important date, or a sweet dedication turns a 3D-printed model into the ultimate personal gift. We embed your custom text directly into the model.
+        </p>
+        <div class="showcase-split">
+            <div class="showcase-img-container">
+                <img src="/resources/personalization/labeling.webp" alt="Inscriptions & Customizations" class="showcase-img">
+            </div>
+            <div>
+                <h3 style="color: var(--accent-gold); font-size: 1.5rem;">Personal & Permanent</h3>
+                <p style="margin-bottom: 1.5rem;">
+                    Unlike post-print engravings or stickers, the inscription is integrated directly into the model in 3D during the printing process (embossed or recessed). This makes it highly wear-resistant, durable, and perfectly integrated into the design.
+                </p>
+                <ul style="color: var(--text-secondary); list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.8rem;">
+                    <li>✍️ <strong>Individual Fonts:</strong> From elegant cursive scripts to clean, modern block letters.</li>
+                    <li>🎁 <strong>Ideal for Occasions:</strong> Perfect for birthdays (e.g., with name & birth date), weddings, or club gifts.</li>
+                    <li>💡 <strong>Endless Creativity:</strong> Integrate short quotes, dedications, or small symbols (like hearts or stars).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact CTA -->
     <div class="card"
-        style="margin-top: 4rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+        style="margin-top: 6rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto; padding: 3rem;">
         <h3>Do you have a special idea? 💡</h3>
-        <p>Let's see together how we can realize your project.</p>
+        <p>Let's see together how we can best bring your ideas to life.</p>
         <br>
         <a href="#contact" class="btn-primary">Inquire Now</a>
     </div>
 </div>
+
+<!-- Dynamic Swatch Switching Script -->
+<script>
+    function switchSingleColor(btn, name, imgSrc) {
+        const container = btn.closest('.swatch-list');
+        container.querySelectorAll('.swatch-item').forEach(item => item.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const showcaseImg = document.getElementById('single-showcase-img');
+        const badge = document.getElementById('single-badge');
+        
+        showcaseImg.style.opacity = 0;
+        setTimeout(() => {
+            showcaseImg.src = imgSrc;
+            badge.textContent = name;
+            showcaseImg.style.opacity = 1;
+        }, 200);
+    }
+
+    function switchMulticolor(btn, name, imgSrc) {
+        const container = btn.closest('.swatch-list');
+        container.querySelectorAll('.swatch-item').forEach(item => item.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const showcaseImg = document.getElementById('multi-showcase-img');
+        const badge = document.getElementById('multi-badge');
+        
+        showcaseImg.style.opacity = 0;
+        setTimeout(() => {
+            showcaseImg.src = imgSrc;
+            badge.textContent = name;
+            showcaseImg.style.opacity = 1;
+        }, 200);
+    }
+</script>
