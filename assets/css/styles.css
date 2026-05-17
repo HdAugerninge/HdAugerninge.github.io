@@ -756,11 +756,3 @@ a:hover {
 .card:hover .card-img-main {
   transform: scale(1.05);
 }
-
-.card-img-main.zoom-out {
-  transform: scale(0.85);
-}
-
-.card:hover .card-img-main.zoom-out {
-  transform: scale(0.9);
-}
