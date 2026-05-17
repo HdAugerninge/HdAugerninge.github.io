@@ -733,3 +733,11 @@ a:hover {
 .card:hover .card-img-container img {
   transform: scale(1.06);
 }
+
+.card-img-container img.zoom-out {
+  transform: scale(0.7);
+}
+
+.card:hover .card-img-container img.zoom-out {
+  transform: scale(0.74);
+}
