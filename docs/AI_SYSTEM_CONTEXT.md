@@ -1,8 +1,13 @@
 # Fantasy Printing Art - Technical Setup & Best Practices
 
 ## Project Fundamentals
-- **Business Focus**: 3D printing service specializing in articulated dragons, fidget toys, nerd stuff, and customized, web-sourced practical solutions.
+- **Business Focus**: 3D printing service specializing in articulated dragons, fidget toys, nerd stuff, and beautiful decorative display models.
 - **Routing & Tech Stack**: Hosted statically generated via GitHub Pages user site.
+
+## Brand Positioning & Copy Guidelines
+- **Decorative over Practical**: This project is primarily focused on **beautiful, high-quality, and highly decorative 3D prints** (e.g., articulated dragons, ornamental figures, saisonals, and premium display pieces).
+- **Practical/Functional De-emphasis**: While custom practical or functional prints (like adapters, brackets, technical mounts, or custom-fit inserts) are done occasionally, they should **never** be emphasized in the general copy, headings, or primary examples.
+- **Copy Best Practices**: Always emphasize artistic design, visual aesthetics, filament effects (silk, matte, multi-color), and premium display additions (e.g., thematic pedestals, custom nameplates, or model merging). Keep functional or technical references out of user-facing templates and showcase pages unless explicitly requested.
 - **Formspree Setup**: The contact form logic in `index.md` uses the `@formspree/ajax` Vanilla JS library via CDN. We intentionally **avoid** standard HTTP Basic action posts to prevent users from being thrown out to Formspree's success/captcha page. It captures validation dynamically inside `data-fs-error`. 
 
 ## Bilingual Architecture (DE & EN)
