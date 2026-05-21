@@ -36,21 +36,27 @@
                 {% endif %}
 
                 <div class="nav-dropdown">
-                    <a href="{{ '/models.html' | prepend: url_prefix | relative_url }}" class="dropbtn">{{ ui.nav.models_category }}</a>
+                    <a href="{{ '/models.html' | prepend: url_prefix | relative_url }}" class="dropbtn">{{
+                        ui.nav.models_category }}</a>
                     <div class="dropdown-content">
                         <a href="{{ '/dragons.html' | prepend: url_prefix | relative_url }}">{{ ui.nav.dragons }}</a>
                         <a href="{{ '/figures.html' | prepend: url_prefix | relative_url }}">{{ ui.nav.figures }}</a>
                         <a href="{{ '/fidgets.html' | prepend: url_prefix | relative_url }}">{{ ui.nav.fidgets }}</a>
-                        <a href="{{ '/nerdstuff.html' | prepend: url_prefix | relative_url }}">{{ ui.nav.nerdstuff }}</a>
-                        <a href="{{ '/allerlei.html' | prepend: url_prefix | relative_url }}">{{ ui.nav.allerlei }}</a>
+                        <a href="{{ '/nerdstuff.html' | prepend: url_prefix | relative_url }}">{{ ui.nav.nerdstuff
+                            }}</a>
+                        <a href="{{ '/solutions.html' | prepend: url_prefix | relative_url }}">{{ ui.nav.solutions
+                            }}</a>
                         <a href="{{ '/planters.html' | prepend: url_prefix | relative_url }}">{{ ui.nav.planters }}</a>
-                        <a href="{{ '/saisonals.html' | prepend: url_prefix | relative_url }}">{{ ui.nav.saisonals }}</a>
-                        <a href="{{ '/solutions.html' | prepend: url_prefix | relative_url }}">{{ ui.nav.solutions }}</a>
+                        <a href="{{ '/allerlei.html' | prepend: url_prefix | relative_url }}">{{ ui.nav.allerlei }}</a>
+                        <a href="{{ '/saisonals.html' | prepend: url_prefix | relative_url }}">{{ ui.nav.saisonals
+                            }}</a>
+
                     </div>
                 </div>
 
                 <a href="{{ '/materials.html' | prepend: url_prefix | relative_url }}">{{ ui.nav.materials }}</a>
-                <a href="{{ '/personalization.html' | prepend: url_prefix | relative_url }}">{{ ui.nav.personalization }}</a>
+                <a href="{{ '/personalization.html' | prepend: url_prefix | relative_url }}">{{ ui.nav.personalization
+                    }}</a>
                 <a href="{{ '/about.html' | prepend: url_prefix | relative_url }}">{{ ui.nav.about }}</a>
                 <div class="lang-switcher" style="margin: 0 5px; display: inline-flex; gap: 5px;">
                     <a href="{{ '/' | relative_url }}"
@@ -60,11 +66,14 @@
                 </div>
 
                 {% if lang == 'de' %}
-                <a href="{{ '/shop.html' | relative_url }}" class="btn-primary" style="background: var(--accent-gold); color: #000;">{{ ui.nav.shop }}</a>
+                <a href="{{ '/shop.html' | relative_url }}" class="btn-primary"
+                    style="background: var(--accent-gold); color: #000;">{{ ui.nav.shop }}</a>
                 {% else %}
-                <a href="{{ '/en/shop.html' | relative_url }}" class="btn-primary" style="background: var(--accent-gold); color: #000;">{{ ui.nav.shop }}</a>
+                <a href="{{ '/en/shop.html' | relative_url }}" class="btn-primary"
+                    style="background: var(--accent-gold); color: #000;">{{ ui.nav.shop }}</a>
                 {% endif %}
-                <a href="{% if lang == 'en' %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}#contact" class="btn-primary">{{ ui.nav.contact }}</a>
+                <a href="{% if lang == 'en' %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}#contact"
+                    class="btn-primary">{{ ui.nav.contact }}</a>
             </nav>
         </div>
     </header>

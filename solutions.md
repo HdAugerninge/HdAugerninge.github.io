@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Lösungen
+title: Alltagshelfer
 lang: de
 ---
 
