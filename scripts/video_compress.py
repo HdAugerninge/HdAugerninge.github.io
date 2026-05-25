@@ -12,7 +12,7 @@ import subprocess
 import tempfile
 import shutil
 
-def optimize_videos(directory, duration=15, resize_width=480, crf=28):
+def optimize_videos(directory, duration=15, resize_width=480, crf=28, keep_audio=False):
     """
     Finds all .mp4 files in the specified directory and optimizes them for web use.
     """
@@ -46,7 +46,6 @@ def optimize_videos(directory, duration=15, resize_width=480, crf=28):
             print(f"\n--- Optimizing: {os.path.basename(mp4_path)} ---")
             
             # FFmpeg command for web-optimized MP4:
-            # -an: Remove audio
             # -c:v libx264: H.264 codec
             # -crf: Compression level (23 default, 28 is high compression)
             # -preset slow: Better compression efficiency
@@ -58,14 +57,21 @@ def optimize_videos(directory, duration=15, resize_width=480, crf=28):
                 "-t", str(duration),
                 "-i", mp4_path,
                 "-vf", f"scale={resize_width}:trunc(ow/a/2)*2",
-                "-an",
+            ]
+            
+            if keep_audio:
+                cmd.extend(["-c:a", "aac", "-b:a", "128k"])
+            else:
+                cmd.append("-an")
+                
+            cmd.extend([
                 "-c:v", "libx264",
                 "-crf", str(crf),
                 "-preset", "slow",
                 "-movflags", "+faststart",
                 "-pix_fmt", "yuv420p", # Maximum compatibility
                 temp_path
-            ]
+            ])
             
             result = subprocess.run(cmd, capture_output=True, text=True)
             
@@ -88,6 +94,7 @@ if __name__ == "__main__":
     parser.add_argument("--duration", type=int, default=15, help="Max duration in seconds (default: 15)")
     parser.add_argument("--width", type=int, default=480, help="Resize to this width (default: 480)")
     parser.add_argument("--crf", type=int, default=28, help="Compression level 0-51. Higher = smaller file (default: 28)")
+    parser.add_argument("--keep-audio", action="store_true", help="Keep the audio track (compressed to AAC 128k)")
     parser.add_argument("-y", "--yes", action="store_true", help="Skip confirmation prompt")
     
     args = parser.parse_args()
@@ -103,5 +110,6 @@ if __name__ == "__main__":
         args.directory, 
         duration=args.duration, 
         resize_width=args.width,
-        crf=args.crf
+        crf=args.crf,
+        keep_audio=args.keep_audio
     )
