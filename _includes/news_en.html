@@ -2,7 +2,6 @@
     <div class="hero-bg" style="background-image: url('/resources/materials/overview1.webp');"></div>
     <div class="hero-content">
         <h1>News</h1>
-        <h2 style="color: var(--text-secondary);">Note: This page is currently under construction.</h2>
         <p>Stay up to date with my latest 3D-printed creations.</p>
     </div>
 </div>
@@ -13,53 +12,63 @@
         Here you will find the latest models, fresh off the printer or newly added to the gallery.
     </p>
 
+    <!-- May 2026 -->
     <div class="gallery-section">
-        <div class="media-grid" style="align-items: center;">
-            {% comment %} Safely filter and sort images {% endcomment %}
-            {% assign all_files = site.static_files | where_exp: "item", "item.path contains '/resources/models/'" %}
-            {% assign sorted_files = all_files | sort: "modified_time" | reverse %}
+        <h3 class="gallery-title">May 2026</h3>
+        <div class="media-grid" style="align-items: start;">
 
-            {% assign count = 0 %}
-            {% assign shown_sections = "" %}
-            {% for file in sorted_files %}
-            {% if count < 3 %} {% if file.extname=='.webp' or file.extname=='.mp4' %} {% assign parts=file.path |
-                split: "/" %} {% assign category="" %} {% assign model_name="" %} {% assign found_models=false %} {% for
-                part in parts %} {% if found_models %} {% if category=="" %} {% assign category=part %} {% elsif part contains "." %}
-                {% comment %} This is a filename, skip {% endcomment %}
-                {% else %} {% assign model_name=part | downcase | replace: " " , "" %} {% endif %} {% endif
-                %} {% if part=="models" %} {% assign found_models=true %} {% endif %} {% endfor %} {% assign
-                section_key=category | append: "-" | append: model_name | append: "," %} {% unless shown_sections
-                contains section_key %} {% assign shown_sections=shown_sections | append: section_key %} {% comment %}
-                Map folder names to page names if they differ {% endcomment %} {% assign category_page=category %} {% if
-                category=="rest" %} {% assign category_page="allerlei" %} {% endif %} {% assign href='/en/' | append:
-                category_page | append: '.html' %} {% if model_name !="" %} {% assign href=href | append: '#' | append:
-                model_name %} {% endif %} <div class="media-item-container"
-                style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
-                {% if file.extname == '.mp4' %}
+            <div class="media-item-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <img loading="lazy" decoding="async" class="media-item"
+                    src="/resources/models/figures/Laubhoernchen.webp" alt="Leaf Squirrel">
+                <div class="media-label" style="margin-bottom: 0;">Figures</div>
+                <a href="{{ '/en/figures.html#diversefigures' | relative_url }}" class="jump-link"
+                    style="color: var(--accent-color); font-size: 0.9rem; text-decoration: underline;">Jump to page</a>
+            </div>
+
+            <div class="media-item-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <img loading="lazy" decoding="async" class="media-item"
+                    src="/resources/models/figures/capybaras/IMG_20260519_224125.webp" alt="Capybara">
+                <div class="media-label" style="margin-bottom: 0;">Figures</div>
+                <a href="{{ '/en/figures.html#capybaras' | relative_url }}" class="jump-link"
+                    style="color: var(--accent-color); font-size: 0.9rem; text-decoration: underline;">Jump to page</a>
+            </div>
+
+            <div class="media-item-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <img loading="lazy" decoding="async" class="media-item"
+                    src="/resources/models/nerdstuff/TodessternLampe/IMG_20250629_211854.webp" alt="Death Star Lamp">
+                <div class="media-label" style="margin-bottom: 0;">Nerd Stuff</div>
+                <a href="{{ '/en/nerdstuff.html#starwars' | relative_url }}" class="jump-link"
+                    style="color: var(--accent-color); font-size: 0.9rem; text-decoration: underline;">Jump to page</a>
+            </div>
+
+            <div class="media-item-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <img loading="lazy" decoding="async" class="media-item"
+                    src="/resources/models/solutions/StarRealmsLifeCounter.webp" alt="Star Realms Life Counter">
+                <div class="media-label" style="margin-bottom: 0;">Everyday Helpers</div>
+                <a href="{{ '/en/solutions.html#tools' | relative_url }}" class="jump-link"
+                    style="color: var(--accent-color); font-size: 0.9rem; text-decoration: underline;">Jump to page</a>
+            </div>
+
+            <div class="media-item-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <img loading="lazy" decoding="async" class="media-item"
+                    src="/resources/models/rest/MondLampe/IMG_20260521_100727.webp" alt="Moon Lamp">
+                <div class="media-label" style="margin-bottom: 0;">Miscellaneous</div>
+                <a href="{{ '/en/allerlei.html#mondlampe' | relative_url }}" class="jump-link"
+                    style="color: var(--accent-color); font-size: 0.9rem; text-decoration: underline;">Jump to page</a>
+            </div>
+
+            <div class="media-item-container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
                 <video class="media-item media-video" autoplay loop muted playsinline>
-                    <source src="{{ file.path | relative_url }}" type="video/mp4">
+                    <source src="/resources/models/solutions/PistazienSchale/VID_20260515_222658.mp4" type="video/mp4">
                 </video>
-                {% else %}
-                <img loading="lazy" decoding="async" class="media-item" src="{{ file.path | relative_url }}"
-                    alt="New Model">
-                {% endif %}
+                <div class="media-label" style="margin-bottom: 0;">Everyday Helpers</div>
+                <a href="{{ '/en/solutions.html#pistazienschale' | relative_url }}" class="jump-link"
+                    style="color: var(--accent-color); font-size: 0.9rem; text-decoration: underline;">Jump to page</a>
+            </div>
 
-                {% if category != "" %}
-                <div class="media-label" style="margin-bottom: 0;">{{ ui.nav[category_page] | default: "Recently Added"
-                    }}</div>
-                <a href="{{ href | relative_url }}" class="jump-link"
-                    style="color: var(--accent-color); font-size: 0.9rem; text-decoration: underline;">{{
-                    ui.nav.jump_to_page | default: "Jump to page" }}</a>
-                {% else %}
-                <div class="media-label">Recently Added</div>
-                {% endif %}
         </div>
-        {% assign count = count | plus: 1 %}
-        {% endunless %}
-        {% endif %}
-        {% endif %}
-        {% endfor %}
     </div>
+
 </div>
 
 <div style="text-align: center; margin-top: 4rem;">
