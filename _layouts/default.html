@@ -157,16 +157,13 @@
             }
 
             mediaItems.forEach(function (item, index) {
+                if (item.tagName.toLowerCase() === 'video' && item.hasAttribute('controls')) {
+                    item.style.cursor = "default";
+                    return;
+                }
+
                 item.style.cursor = "zoom-in";
                 item.onclick = function (e) {
-                    if (item.tagName.toLowerCase() === 'video' && item.hasAttribute('controls')) {
-                        var rect = item.getBoundingClientRect();
-                        var clickY = e.clientY - rect.top;
-                        // If clicked in the bottom 50px (approx controls height), allow default control interaction
-                        if (clickY > rect.height - 50) {
-                            return;
-                        }
-                    }
                     modal.style.display = "flex";
                     showMedia(index);
                 }
