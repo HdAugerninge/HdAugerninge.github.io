@@ -239,6 +239,22 @@
         </div>
     </div>
 
+    <!-- Galerie Section -->
+    <div id="gallery" class="gallery-section" style="margin-top: 6rem;">
+        <h3 class="gallery-title"><span>Galerie der Anpassungen</span></h3>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 800px;">
+            Hier findest du einige Beispiele von bereits umgesetzten Kundenwünschen und individuellen Anpassungen:
+        </p>
+        <div class="media-grid">
+            {% assign gallery_files = site.static_files | where_exp: "file", "file.path contains 'resources/personalization/gallery/'" %}
+            {% for file in gallery_files %}
+                {% if file.extname == '.webp' or file.extname == '.png' or file.extname == '.jpg' or file.extname == '.jpeg' %}
+                    <img loading="lazy" decoding="async" class="media-item" src="{{ file.path | relative_url }}" alt="Beispiel Anpassung">
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
     <!-- Contact CTA -->
     <div class="card"
         style="margin-top: 6rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto; padding: 3rem;">
