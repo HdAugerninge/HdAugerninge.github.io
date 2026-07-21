@@ -520,15 +520,131 @@ span[data-fs-error] {
 
 
 
+/* Mobile Navigation Toggle Button */
+.mobile-nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1002;
+}
+
+.hamburger-bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--accent-gold);
+  border-radius: 3px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-nav-toggle.is-active .hamburger-bar:nth-child(1) {
+  transform: translateY(9.5px) rotate(45deg);
+}
+
+.mobile-nav-toggle.is-active .hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-nav-toggle.is-active .hamburger-bar:nth-child(3) {
+  transform: translateY(-9.5px) rotate(-45deg);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 2.5rem;
   }
 
+  .mobile-nav-toggle {
+    display: flex;
+  }
+
+  body.nav-open {
+    overflow: hidden;
+  }
+
   .glass-nav nav {
-    display: none;
-    /* simple mobile nav override needed in future */
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 77px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 77px);
+    background: rgba(10, 8, 12, 0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border-glass);
+    padding: 1.5rem 1.5rem 3rem 1.5rem;
+    gap: 0.6rem;
+    align-items: stretch;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    z-index: 999;
+  }
+
+  .glass-nav nav.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .glass-nav nav a:not(.btn-primary) {
+    font-size: 1.05rem;
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.08);
+    display: block;
+    width: 100%;
+  }
+
+  /* Dropdown behavior on Mobile */
+  .nav-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    position: static;
+    transform: none;
+    min-width: 100%;
+    box-shadow: none;
+    border: none;
+    border-left: 2px solid var(--accent-gold);
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.03);
+    margin: 0.4rem 0 0.8rem 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .dropdown-content a {
+    padding: 10px 12px;
+    font-size: 0.9rem !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    text-transform: none;
+  }
+
+  .glass-nav .btn-primary {
+    text-align: center;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+  }
+
+  .lang-switcher {
+    justify-content: center;
+    padding: 0.5rem 0;
   }
 
   .media-video {

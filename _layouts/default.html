@@ -24,7 +24,14 @@
                     style="height: 45px; width: auto; object-fit: contain;">
                 <span class="logo">Fantasy Printing <span>Art</span></span>
             </a>
-            <nav>
+            <!-- Mobile Hamburger Toggle Button -->
+            <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+
+            <nav id="main-nav">
                 {% comment %} Home link removed as logo already points home {% endcomment %}
                 {% assign url_prefix = "" %}
                 {% if lang == 'en' %}{% assign url_prefix = "/en" %}{% endif %}
@@ -120,6 +127,41 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // Mobile Navigation Toggle
+            var navToggle = document.getElementById("mobile-nav-toggle");
+            var mainNav = document.getElementById("main-nav");
+
+            if (navToggle && mainNav) {
+                navToggle.addEventListener("click", function (e) {
+                    e.stopPropagation();
+                    var expanded = navToggle.getAttribute("aria-expanded") === "true";
+                    navToggle.setAttribute("aria-expanded", !expanded);
+                    navToggle.classList.toggle("is-active");
+                    mainNav.classList.toggle("is-active");
+                    document.body.classList.toggle("nav-open");
+                });
+
+                // Close mobile menu when clicking any nav link
+                mainNav.querySelectorAll("a").forEach(function (link) {
+                    link.addEventListener("click", function () {
+                        navToggle.setAttribute("aria-expanded", "false");
+                        navToggle.classList.remove("is-active");
+                        mainNav.classList.remove("is-active");
+                        document.body.classList.remove("nav-open");
+                    });
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener("click", function (e) {
+                    if (mainNav.classList.contains("is-active") && !mainNav.contains(e.target) && !navToggle.contains(e.target)) {
+                        navToggle.setAttribute("aria-expanded", "false");
+                        navToggle.classList.remove("is-active");
+                        mainNav.classList.remove("is-active");
+                        document.body.classList.remove("nav-open");
+                    }
+                });
+            }
+
             var modal = document.getElementById("lightbox-modal");
             var modalImg = document.getElementById("lightbox-img");
             var modalVid = document.getElementById("lightbox-video");
