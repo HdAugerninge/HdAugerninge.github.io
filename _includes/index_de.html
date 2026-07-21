@@ -77,31 +77,25 @@
         einer persönlichen Beratung? Füll einfach das Formular aus oder schreib mir direkt!</p>
 
     <div class="contact-form">
-        <div data-fs-success
-            style="color: var(--accent-gold); text-align: center; margin-bottom: 1rem; font-weight: 800;">Vielen Dank
-            für deine Nachricht! Ich melde mich in Kürze bei dir.</div>
-        <div data-fs-error style="color: #ff6b6b; text-align: center; margin-bottom: 1rem;">Hoppla! Es gab ein Problem
-            beim Senden.</div>
+        <div data-fs-success>Vielen Dank für deine Nachricht! Ich melde mich in Kürze bei dir.</div>
+        <div data-fs-error>Hoppla! Es gab ein Problem beim Senden.</div>
 
         <form id="my-form">
             <div class="form-group">
                 <label for="name">Dein Name</label>
                 <input type="text" id="name" name="name" data-fs-field required>
-                <span data-fs-error="name"
-                    style="color: #ff6b6b; font-size: 0.85rem; display: block; margin-top: 5px;"></span>
+                <span data-fs-error="name"></span>
             </div>
             <div class="form-group">
                 <label for="email">Deine E-Mail Adresse</label>
                 <input type="email" id="email" name="email" data-fs-field required>
-                <span data-fs-error="email"
-                    style="color: #ff6b6b; font-size: 0.85rem; display: block; margin-top: 5px;"></span>
+                <span data-fs-error="email"></span>
             </div>
             <div class="form-group">
                 <label for="message">Wie kann ich dir helfen?</label>
                 <textarea id="message" name="message" rows="5" data-fs-field required
                     placeholder="Beschreibe kurz dein Projekt oder nenne mir das Modell, das dich interessiert..."></textarea>
-                <span data-fs-error="message"
-                    style="color: #ff6b6b; font-size: 0.85rem; display: block; margin-top: 5px;"></span>
+                <span data-fs-error="message"></span>
             </div>
             <button type="submit" class="btn-primary form-submit-btn" data-fs-submit-btn>Nachricht Senden</button>
         </form>

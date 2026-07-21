@@ -355,6 +355,43 @@ a:hover {
   margin-top: 1rem;
 }
 
+/* Formspree Notification & Validation Styles */
+[data-fs-success] {
+  display: none;
+  background: rgba(255, 215, 0, 0.08) !important;
+  border: 1px solid var(--accent-gold) !important;
+  color: var(--accent-gold) !important;
+  padding: 1rem 1.25rem !important;
+  border-radius: 12px !important;
+  text-align: center !important;
+  margin-bottom: 1.5rem !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.15) !important;
+}
+
+[data-fs-error]:not(span) {
+  display: none;
+  background: rgba(212, 0, 0, 0.12) !important;
+  border: 1px solid var(--accent-red) !important;
+  color: #ff6b6b !important;
+  padding: 1rem 1.25rem !important;
+  border-radius: 12px !important;
+  text-align: center !important;
+  margin-bottom: 1.5rem !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 15px rgba(212, 0, 0, 0.15) !important;
+}
+
+span[data-fs-error] {
+  color: #ff6b6b !important;
+  font-size: 0.85rem !important;
+  display: block !important;
+  margin-top: 5px !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
 /* Footer Element */
 .footer {
   border-top: 1px solid var(--border-glass);
