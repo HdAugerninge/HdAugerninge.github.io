@@ -1073,7 +1073,7 @@ span[data-fs-error] {
 }
 
 .highlight-standard .highlight-image-wrapper img {
-  object-position: center bottom;
+  object-position: center 38%;
 }
 
 .highlight-premium .highlight-image-wrapper img {
