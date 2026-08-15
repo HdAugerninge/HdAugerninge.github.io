@@ -1008,34 +1008,35 @@ span[data-fs-error] {
   top: 14px;
   left: 14px;
   z-index: 10;
-  padding: 6px 14px;
+  padding: 7px 16px;
   border-radius: 20px;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  background: rgba(10, 8, 14, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
   pointer-events: none;
 }
 
 .badge-small {
-  background: rgba(0, 200, 220, 0.25);
   color: #70f3ff;
-  border: 1px solid rgba(0, 242, 254, 0.4);
+  border: 1.5px solid #00f2fe;
+  box-shadow: 0 0 12px rgba(0, 242, 254, 0.35);
 }
 
 .badge-standard {
-  background: rgba(255, 215, 0, 0.2);
   color: var(--accent-gold);
-  border: 1px solid rgba(255, 215, 0, 0.4);
+  border: 1.5px solid var(--accent-gold);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.35);
 }
 
 .badge-premium {
-  background: rgba(212, 0, 0, 0.25);
-  color: #ff7b7b;
-  border: 1px solid rgba(212, 0, 0, 0.4);
+  color: #ff6b6b;
+  border: 1.5px solid #ff4d4d;
+  box-shadow: 0 0 12px rgba(255, 77, 77, 0.35);
 }
 
 .card-price-tag {
@@ -1043,16 +1044,16 @@ span[data-fs-error] {
   top: 14px;
   right: 14px;
   z-index: 10;
-  background: rgba(10, 8, 12, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(10, 8, 14, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: #ffffff;
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 700;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
 }
 
 .highlight-image-wrapper {
@@ -1067,11 +1068,65 @@ span[data-fs-error] {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   transition: transform 0.5s ease;
+}
+
+.highlight-standard .highlight-image-wrapper img {
+  object-position: center 25%;
 }
 
 .highlight-card:hover .highlight-image-wrapper img {
   transform: scale(1.08);
+}
+
+/* Accessory Section & Styling */
+.accessory-divider {
+  margin-top: 6rem;
+  margin-bottom: 3.5rem;
+  padding-top: 3.5rem;
+  border-top: 2px dashed rgba(0, 242, 254, 0.3);
+  text-align: center;
+}
+
+.accessory-divider h2 {
+  font-size: 2.2rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, #00f2fe, #4facfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.accessory-divider p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.gallery-section.accessory-section .gallery-title {
+  color: #70f3ff;
+  border-bottom-color: rgba(0, 242, 254, 0.3);
+}
+
+.gallery-section.accessory-section .price-tag {
+  color: #a0ecff;
+}
+
+.accessory-badge {
+  display: inline-block;
+  margin-left: 12px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(0, 242, 254, 0.15);
+  color: #00f2fe;
+  border: 1px solid rgba(0, 242, 254, 0.35);
+  vertical-align: middle;
 }
 
 .highlight-body {
