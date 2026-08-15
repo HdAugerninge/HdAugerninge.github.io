@@ -1076,6 +1076,10 @@ span[data-fs-error] {
   object-position: center bottom;
 }
 
+.highlight-premium .highlight-image-wrapper img {
+  object-position: center top;
+}
+
 .highlight-card:hover .highlight-image-wrapper img {
   transform: scale(1.08);
 }
